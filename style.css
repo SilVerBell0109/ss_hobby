@@ -41,8 +41,9 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
   align-items: center;
 }
 .nav-logo {
-  font-family: 'Gowun Dodum', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 1.4rem;
+  font-weight: 700;
   color: var(--primary);
   text-decoration: none;
 }
@@ -227,7 +228,23 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
   font-family: inherit;
   font-size: 1rem;
   text-align: center;
+  transition: background 0.15s, border-color 0.15s;
 }
+.choice-btn:hover:not(:disabled) { background: var(--surface); border-color: var(--primary); }
+.choice-btn.correct { background: #E8F0F8; border-color: var(--primary); color: var(--primary); font-weight: 700; }
+.choice-btn.wrong { background: #FDE8E8; border-color: #C05050; color: #5A1A1A; }
+.feedback.correct { background: #E8F0F8; color: var(--primary); font-weight: 700; }
+.feedback.wrong { background: #FDE8E8; color: #C05050; }
+
+.game-result-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.result-grade-label { color: var(--text-light); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 0.8rem; }
+.result-score-text { color: var(--text-light); margin-top: 1rem; font-size: 1.1rem; }
 .feedback {
   background: var(--surface);
   padding: 1rem;
@@ -269,7 +286,7 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
   text-align: center;
 }
 .result-label { color: var(--accent); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
-.result-hobby { font-family: 'Gowun Dodum', sans-serif; font-size: 1.8rem; margin-bottom: 0.5rem; }
+.result-hobby { font-family: 'Noto Sans KR', sans-serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; }
 .result-from { color: var(--text-light); font-size: 0.9rem; margin-bottom: 1.5rem; }
 .result-tips {
   text-align: left;
