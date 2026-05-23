@@ -3,14 +3,15 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --bg: #F8F6F2;
+  --bg: #FBFBFE;
   --card: #FFFFFF;
-  --primary: #1E3A5F;
-  --accent: #4A86C8;
+  --primary: #4DB190;
+  --secondary: #E2F1EC;
+  --accent: #00C8B3;
   --text: #1A1D2E;
-  --text-light: #5B5F6D;
-  --border: #DDE0EB;
-  --surface: #EDF0F8;
+  --text-light: #747474;
+  --border: #CECECE;
+  --surface: #E2F1EC;
 }
 
 body {
@@ -105,7 +106,7 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
 .hero {
   text-align: center;
   padding: 5rem 2rem;
-  background: linear-gradient(180deg, #F8F6F2 0%, #EDF0F8 100%);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--secondary) 100%);
 }
 .hero h1 { font-size: 2.6rem; margin-bottom: 1rem; }
 .hero .tagline { color: var(--accent); font-size: 1rem; margin-bottom: 0.8rem; letter-spacing: 2px; }
