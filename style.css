@@ -94,14 +94,29 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
   cursor: pointer;
   font-family: inherit;
   font-weight: 500;
+
+  transition: all 0.3s ease;
 }
-.btn-accent { background: var(--accent); }
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  opacity: 0.9;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-accent { 
+  background: var(--accent); 
+}
+
 .btn-outline {
   background: transparent;
   color: var(--primary);
   border: 1.5px solid var(--primary);
 }
-
 /* MAIN PAGE */
 .hero {
   text-align: center;
