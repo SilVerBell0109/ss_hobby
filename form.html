@@ -31,7 +31,7 @@
       <form id="hobby-form" class="form-container">
 
         <div class="form-group">
-          <label class="form-label" for="stress">Q1. 지금 스트레스 정도는? <strong id="stress-val">5</strong></label>
+          <label class="form-label" for="stress">Q1. 지금 얼마나 지쳐있는 상태인가요? <strong id="stress-val">5</strong></label>
           <input type="range" id="stress" min="0" max="10" value="5" class="form-range"
             oninput="document.getElementById('stress-val').textContent=this.value">
           <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:var(--text-light); margin-top:0.3rem;">
@@ -41,7 +41,7 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label">Q2. 하루에 취미에 쓸 수 있는 시간은?</label>
+          <label class="form-label">Q2. 하루에 취미에 쓸 수 있는 시간은 어느정도 되나요?</label>
           <div class="radio-group">
             <label class="radio-item"><input type="radio" name="time" value="10분"> 10분</label>
             <label class="radio-item"><input type="radio" name="time" value="30분"> 30분</label>
@@ -51,7 +51,7 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="mood">Q3. 지금 기분은?</label>
+          <label class="form-label" for="mood">Q3. 지금 기분은 어떤가요?</label>
           <select id="mood" class="form-select">
             <option value="활기참">활기참</option>
             <option value="평온함">평온함</option>
@@ -70,7 +70,7 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label">Q5. 혼자 vs 같이</label>
+          <label class="form-label">Q5. 혼자 vs 같이 뭐가 더 좋아요?</label>
           <div class="radio-group">
             <label class="radio-item"><input type="radio" name="social" value="혼자"> 혼자</label>
             <label class="radio-item"><input type="radio" name="social" value="같이"> 같이</label>
@@ -79,7 +79,7 @@
         </div>
 
         <div class="form-actions">
-          <button type="submit" class="btn btn-accent">추천 받기 →</button>
+          <button type="submit" class="btn btn-accent">취미 추천 받기 →</button>
         </div>
 
       </form>
