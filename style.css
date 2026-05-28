@@ -190,7 +190,71 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
   color: var(--accent);
   font-weight: 500;
   font-size: 0.95rem;
+  cursor: pointer;
+  transition: color 0.15s;
 }
+.member-hobby:hover {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* 취미 상세 모달 */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-box {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  max-width: 440px;
+  width: 90%;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  animation: modal-in 0.18s ease;
+}
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.1rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--text-light);
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+}
+.modal-close:hover { color: var(--text); }
+.modal-emoji { font-size: 3rem; margin-bottom: 0.8rem; }
+.modal-hobby-name { font-size: 1.6rem; margin-bottom: 0.35rem; }
+.modal-recommender { color: var(--accent); font-size: 0.9rem; margin-bottom: 1.5rem; }
+.modal-section {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 0.8rem;
+  text-align: left;
+}
+.modal-section-label {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.35rem;
+}
+.modal-section p { font-size: 0.9rem; color: var(--text); line-height: 1.65; }
 
 /* GAME PAGE */
 .game-header {
