@@ -171,6 +171,29 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
 
 .cta { text-align: center; padding: 3rem 0; }
 
+.pros-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.pros-card {
+ background: var(--card);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  min-height: 320px;
+  transition: 0.3s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pros-icon { font-size: 3rem; margin-bottom: 1.2rem; text-align: center; }
+.pros-card h3 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--primary); text-align: center; }
+.pros-card p { color: var(--text-light); font-size: 0.9rem; line-height: 1.8; text-align: center; }
+/* TEAM PAGE */
+
 /* TEAM PAGE */
 .team-grid {
   display: grid;
