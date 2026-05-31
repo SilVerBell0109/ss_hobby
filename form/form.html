@@ -4,21 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>학기 중 취미 추천 | 폼</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
-<body>
+<body data-page="form">
 
-  <nav class="nav">
-    <div class="nav-container">
-      <a href="main.html" class="nav-logo">🍀숨쉴 취미.zip</a>
-      <ul class="nav-menu">
-        <li><a href="main.html">메인</a></li>
-        <li><a href="team.html">팀원소개</a></li>
-        <li><a href="game.html">게임</a></li>
-        <li><a href="form.html" class="active">폼</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div id="site-nav"></div>
 
   <main>
     <div class="container">
@@ -100,11 +90,10 @@
     </div>
   </main>
 
-  <footer class="footer">
-    <p>© 2026 학기 중 취미 추천 · 웹클라이언트컴퓨팅 01분반 · 숨쉴 취미.zip</p>
-  </footer>
+  <div id="site-footer"></div>
 
-  <script src="data.js"></script>
-  <script src="form.js"></script>
+  <script src="/shared/layout.js"></script>
+  <script src="/shared/data.js"></script>
+  <script src="/form/form.js"></script>
 </body>
 </html>

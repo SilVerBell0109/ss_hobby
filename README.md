@@ -59,17 +59,26 @@
 
 ```text
 project/
-│
-├── main.html      # 메인 페이지
-├── team.html      # 팀원 소개 페이지
-├── game.html      # 이모티콘 퀴즈 게임
-├── form.html      # 취미 추천 설문
-│
-├── style.css      # 공통 스타일
-├── game.js        # 게임 기능
-├── form.js        # 설문 추천 기능
-│
-└── vercel.json    # Vercel 배포 설정
+├── main/           # 메인 페이지
+│   ├── main.html
+│   └── main.js
+├── team/           # 팀원 소개
+│   ├── team.html
+│   └── team.js
+├── game/           # 이모티콘 퀴즈
+│   ├── game.html
+│   └── game.js
+├── form/           # 취미 추천 설문
+│   ├── form.html
+│   └── form.js
+├── assets/
+│   └── style.css   # 공통 스타일
+├── shared/
+│   ├── layout.js   # 공통 nav·footer
+│   └── data.js     # data.json fetch 유틸
+├── data/
+│   └── data.json   # 멤버·취미·폼·게임 데이터
+└── vercel.json
 ```
 
 ---
@@ -98,8 +107,8 @@ project/
 ## 🚀 실행 방법
 
 1. 프로젝트 다운로드
-2. `main.html` 실행
-3. 또는 배포된 웹사이트 접속
+2. 로컬 서버 실행 후 `/main/main.html` 접속 (예: `npx serve .`)
+3. 또는 배포된 웹사이트 접속 (루트 `/`가 메인으로 연결됨)
 
 ---
 
