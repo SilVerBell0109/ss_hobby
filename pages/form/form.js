@@ -1,4 +1,14 @@
 (function () {
+  var stressRange = document.getElementById("stress");
+  var stressVal = document.getElementById("stress-val");
+  if (stressRange && stressVal) {
+    function syncStressValue() {
+      stressVal.textContent = stressRange.value;
+    }
+    syncStressValue();
+    stressRange.addEventListener("input", syncStressValue);
+  }
+
   var form = document.getElementById("hobby-form");
   if (!form) return;
 
