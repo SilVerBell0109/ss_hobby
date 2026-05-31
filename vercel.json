@@ -1,9 +1,13 @@
 {
   "rewrites": [
-    { "source": "/", "destination": "/main/main.html" },
-    { "source": "/main.html", "destination": "/main/main.html" },
-    { "source": "/team.html", "destination": "/team/team.html" },
-    { "source": "/game.html", "destination": "/game/game.html" },
-    { "source": "/form.html", "destination": "/form/form.html" }
+    { "source": "/", "destination": "/pages/main/main.html" },
+    { "source": "/main.html", "destination": "/pages/main/main.html" },
+    { "source": "/team.html", "destination": "/pages/team/team.html" },
+    { "source": "/game.html", "destination": "/pages/game/game.html" },
+    { "source": "/form.html", "destination": "/pages/form/form.html" },
+    { "source": "/main/main.html", "destination": "/pages/main/main.html" },
+    { "source": "/team/team.html", "destination": "/pages/team/team.html" },
+    { "source": "/game/game.html", "destination": "/pages/game/game.html" },
+    { "source": "/form/form.html", "destination": "/pages/form/form.html" }
   ]
 }

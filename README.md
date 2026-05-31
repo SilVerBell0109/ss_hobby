@@ -59,18 +59,11 @@
 
 ```text
 project/
-├── main/           # 메인 페이지
-│   ├── main.html
-│   └── main.js
-├── team/           # 팀원 소개
-│   ├── team.html
-│   └── team.js
-├── game/           # 이모티콘 퀴즈
-│   ├── game.html
-│   └── game.js
-├── form/           # 취미 추천 설문
-│   ├── form.html
-│   └── form.js
+├── pages/          # 화면(도메인)별
+│   ├── main/
+│   ├── team/
+│   ├── game/
+│   └── form/
 ├── assets/
 │   └── style.css   # 공통 스타일
 ├── shared/
@@ -78,6 +71,8 @@ project/
 │   └── data.js     # data.json fetch 유틸
 ├── data/
 │   └── data.json   # 멤버·취미·폼·게임 데이터
+├── docs/
+│   └── wireframe.html
 └── vercel.json
 ```
 
@@ -107,7 +102,7 @@ project/
 ## 🚀 실행 방법
 
 1. 프로젝트 다운로드
-2. 로컬 서버 실행 후 `/main/main.html` 접속 (예: `npx serve .`)
+2. 로컬 서버 실행 후 `/pages/main/main.html` 접속 (예: `npx serve .`)
 3. 또는 배포된 웹사이트 접속 (루트 `/`가 메인으로 연결됨)
 
 ---

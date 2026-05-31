@@ -1,14 +1,14 @@
 (function () {
   var LOGO = {
-    href: "/main/main.html",
+    href: "/pages/main/main.html",
     text: "🍀숨쉴 취미.zip"
   };
 
   var NAV_ITEMS = [
-    { id: "main", href: "/main/main.html", label: "메인" },
-    { id: "team", href: "/team/team.html", label: "팀원소개" },
-    { id: "game", href: "/game/game.html", label: "게임" },
-    { id: "form", href: "/form/form.html", label: "폼" }
+    { id: "main", href: "/pages/main/main.html", label: "메인" },
+    { id: "team", href: "/pages/team/team.html", label: "팀원소개" },
+    { id: "game", href: "/pages/game/game.html", label: "게임" },
+    { id: "form", href: "/pages/form/form.html", label: "폼" }
   ];
 
   var FOOTER_TEXT =
