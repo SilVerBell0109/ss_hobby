@@ -2,6 +2,10 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --bg: #FBFBFE;
   --card: #FFFFFF;
@@ -117,6 +121,24 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
   color: var(--primary);
   border: 1.5px solid var(--primary);
 }
+
+/* 카드 리프트 호버 */
+.damage-card,
+.pros-card,
+.preview-card,
+.member-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.damage-card:hover,
+.pros-card:hover,
+.preview-card:hover,
+.member-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--secondary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
 /* MAIN PAGE */
 .hero {
   text-align: center;
@@ -171,6 +193,40 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
 
 .cta { text-align: center; padding: 3rem 0; }
 
+.cta .btn,
+.form-actions .btn {
+  padding: 1rem 2.75rem;
+  font-size: 1.1rem;
+}
+
+.scroll-target {
+  scroll-margin-top: 5rem;
+}
+
+.section-scroll-wrap {
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 10rem;
+}
+
+#section-pros {
+  margin-top: 2rem;
+}
+
+.section-scroll-link {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-light);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+
+.section-scroll-link:hover {
+  color: var(--primary);
+}
+
 .pros-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -182,8 +238,6 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
   border-radius: 12px;
   border: 1px solid var(--border);
   min-height: 320px;
-  transition: 0.3s;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -407,8 +461,16 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
   .container { padding: 2rem 1rem; }
   .hero { padding: 3rem 1rem; }
   .hero h1 { font-size: 1.8rem; }
-  .damage-grid, .team-grid, .preview-grid, .choices {
+  .damage-grid, .pros-grid, .team-grid, .preview-grid, .choices {
     grid-template-columns: 1fr;
   }
   .emoji-combo { font-size: 2.5rem; letter-spacing: 0.8rem; }
+
+  .cta .btn,
+  .form-actions .btn {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 }
