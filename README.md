@@ -68,9 +68,9 @@ project/
 │   └── style.css   # 공통 스타일
 ├── shared/
 │   ├── layout.js   # 공통 nav·footer
-│   └── data.js     # data.json fetch 유틸
-├── data/
-│   └── data.json   # 멤버·취미·폼·게임 데이터
+│   └── data/
+│       ├── data.json   # 멤버·취미·폼·게임 데이터
+│       └── data.js     # JSON fetch·조인 유틸
 ├── docs/
 │   └── wireframe.html
 └── vercel.json
