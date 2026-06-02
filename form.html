@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>학기 중 취미 추천 | 폼</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="main.html" class="nav-logo">🍀숨쉴 취미.zip</a>
+      <ul class="nav-menu">
+        <li><a href="main.html">메인</a></li>
+        <li><a href="team.html">팀원소개</a></li>
+        <li><a href="game.html">게임</a></li>
+        <li><a href="form.html" class="active">폼</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+
+      <section>
+        <h1 class="section-title" style="font-size: 2rem;">너에게 맞는 학기 중 취미 찾기</h1>
+        <p class="section-subtitle">간단한 설문 후 5가지 중 하나의 취미가 추천됩니다</p>
+      </section>
+
+      <form id="hobby-form" class="form-container">
+
+        <div class="form-group">
+          <label class="form-label" for="stress">Q1. 지금 스트레스 정도는? <strong id="stress-val">5</strong></label>
+          <input type="range" id="stress" min="0" max="10" value="5" class="form-range"
+            oninput="document.getElementById('stress-val').textContent=this.value">
+          <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:var(--text-light); margin-top:0.3rem;">
+            <span>편안함 0</span>
+            <span>10 매우 지침</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Q2. 하루에 취미에 쓸 수 있는 시간은?</label>
+          <div class="radio-group">
+            <label class="radio-item"><input type="radio" name="time" value="10분"> 10분</label>
+            <label class="radio-item"><input type="radio" name="time" value="30분"> 30분</label>
+            <label class="radio-item"><input type="radio" name="time" value="1시간"> 1시간</label>
+            <label class="radio-item"><input type="radio" name="time" value="그 이상"> 그 이상</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="mood">Q3. 지금 기분은?</label>
+          <select id="mood" class="form-select">
+            <option value="활기참">활기참</option>
+            <option value="평온함">평온함</option>
+            <option value="지침">지침</option>
+            <option value="우울함">우울함</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Q4. 실내 vs 실외 어디가 좋아요?</label>
+          <div class="radio-group">
+            <label class="radio-item"><input type="radio" name="place" value="실내"> 실내</label>
+            <label class="radio-item"><input type="radio" name="place" value="실외"> 실외</label>
+            <label class="radio-item"><input type="radio" name="place" value="상관없음"> 상관 없음</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Q5. 혼자 vs 같이</label>
+          <div class="radio-group">
+            <label class="radio-item"><input type="radio" name="social" value="혼자"> 혼자</label>
+            <label class="radio-item"><input type="radio" name="social" value="같이"> 같이</label>
+            <label class="radio-item"><input type="radio" name="social" value="둘다"> 둘 다 좋음</label>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-accent">추천 받기 →</button>
+        </div>
+
+      </form>
+
+      <div id="result-box" class="result-box" style="display:none;">
+        <div id="result-emoji" style="font-size:2.5rem; margin-bottom:0.5rem;"></div>
+        <p class="result-label">추천 취미</p>
+        <h2 class="result-hobby" id="result-hobby"></h2>
+        <p class="result-from" id="result-from"></p>
+        <div class="result-tips">
+          <strong>시작 가이드</strong>
+          <p id="result-guide" style="margin-top:0.5rem;"></p>
+          <strong style="display:block; margin-top:1rem;">학기 중 꾸준히 하는 팁</strong>
+          <p id="result-tip" style="margin-top:0.5rem;"></p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 학기 중 취미 추천 · 웹클라이언트컴퓨팅 01분반 · 숨쉴 취미.zip</p>
+  </footer>
+
+  <script src="form.js"></script>
+</body>
+</html>
