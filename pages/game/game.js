@@ -39,6 +39,16 @@
       totalRoundsEl.textContent = rounds.length;
       maxScoreEl.textContent = cfg.maxScoreLabel || "100+";
 
+      function scrollToGameHeader() {
+        var header = document.querySelector(".game-header");
+        if (!header) return;
+        var nav = document.querySelector(".nav");
+        var offset = (nav ? nav.offsetHeight : 0) + 12;
+        var top =
+          window.scrollY + header.getBoundingClientRect().top - offset;
+        window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+      }
+
       function renderRound() {
         var r = rounds[currentRound];
 
@@ -146,6 +156,7 @@
           showResult();
         } else {
           renderRound();
+          scrollToGameHeader();
         }
       });
 
