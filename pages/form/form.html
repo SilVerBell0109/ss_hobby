@@ -18,53 +18,73 @@
         <p class="section-subtitle">간단한 설문 후 5가지 중 하나의 취미가 추천됩니다</p>
       </section>
 
+      <div class="form-progress-wrap">
+        <div calss="form-prograss-bar">
+            <div class="form-progress-fill" id="progress-fill"></div>
+        </div>
+        <span class="form-progress-label" id="progress-label">0 / 5 완료</span>
+      </div>
+
       <form id="hobby-form" class="form-container">
 
-        <div class="form-group">
-          <label class="form-label" for="stress">Q1. 지금 얼마나 지쳐있는 상태인가요? <strong id="stress-val">5</strong></label>
-          <input type="range" id="stress" min="0" max="10" value="5" class="form-range">
-          <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:var(--text-light); margin-top:0.3rem;">
-            <span>편안함 0</span>
-            <span>10 매우 지침</span>
+        <div class="question-card form-group">
+          <div class="question-num">Q1 · 컨디션</div>
+          <label class="form-label" for="stress">
+            지금 얼마나 지쳐있는 상태인가요?
+            <strong id="stress-val" class="range-value">5</strong>
+          </label>
+          <p class="stress-desc" id="stress-desc">보통 수준의 피로도</p>
+          <input type="range" id="stress" min="0" max="10" value="5" step="1" class="form-range">
+          <div class="range-labels">
+            <span>편안함</span>
+            <span>매우 지침</span>
           </div>
         </div>
-
-        <div class="form-group">
-          <label class="form-label">Q2. 하루에 취미에 쓸 수 있는 시간은 어느정도 되나요?</label>
-          <div class="radio-group">
-            <label class="radio-item"><input type="radio" name="time" value="10분"> 10분</label>
-            <label class="radio-item"><input type="radio" name="time" value="30분"> 30분</label>
-            <label class="radio-item"><input type="radio" name="time" value="1시간"> 1시간</label>
-            <label class="radio-item"><input type="radio" name="time" value="그 이상"> 그 이상</label>
+        
+        <div class="question-card form-group">
+          <div class="question-num">Q2 · 시간</div>
+          <label class="form-label">하루에 취미에 쓸 수 있는 시간은 어느정도 되나요?</label>
+          <div class="chip-group" id="time-chips">
+            <button type="button" class="chip-btn" data-name="time" data-value="10분">⏱ 10분</button>
+            <button type="button" class="chip-btn" data-name="time" data-value="30분">☕ 30분</button>
+            <button type="button" class="chip-btn" data-name="time" data-value="1시간">🕐 1시간</button>
+            <button type="button" class="chip-btn" data-name="time" data-value="그 이상">🌙 그 이상</button>
           </div>
+          <input type="hidden" name="time" id="time-hidden">
         </div>
 
-        <div class="form-group">
-          <label class="form-label" for="mood">Q3. 지금 기분은 어떤가요?</label>
-          <select id="mood" class="form-select">
-            <option value="활기참">활기참</option>
-            <option value="평온함">평온함</option>
-            <option value="지침">지침</option>
-            <option value="우울함">우울함</option>
-          </select>
+        <div class="question-card form-group">
+          <div class="question-num">Q3 · 기분</div>
+          <label class="form-label">지금 기분은 어떤가요?</label>
+          <div class="chip-group" id="mood-chips">
+            <button type="button" class="chip-btn" data-name="mood" data-value="활기참">⚡ 활기참</button>
+            <button type="button" class="chip-btn" data-name="mood" data-value="평온함">😌 평온함</button>
+            <button type="button" class="chip-btn" data-name="mood" data-value="지침">😓 지침</button>
+            <button type="button" class="chip-btn" data-name="mood" data-value="우울함">🌧 우울함</button>
+          </div>
+          <input type="hidden" name="mood" id="mood-hidden">
         </div>
 
-        <div class="form-group">
-          <label class="form-label">Q4. 실내 vs 실외 어디가 좋아요?</label>
-          <div class="radio-group">
-            <label class="radio-item"><input type="radio" name="place" value="실내"> 실내</label>
-            <label class="radio-item"><input type="radio" name="place" value="실외"> 실외</label>
-            <label class="radio-item"><input type="radio" name="place" value="상관없음"> 상관 없음</label>
+        <div class="question-card form-group">
+          <div class="question-num">Q4 · 공간</div>
+          <label class="form-label">실내 vs 실외 어디가 좋아요?</label>
+          <div class="chip-group" id="place-chips">
+            <button type="button" class="chip-btn" data-name="place" data-value="실내">🏠 실내</button>
+            <button type="button" class="chip-btn" data-name="place" data-value="실외">🌿 실외</button>
+            <button type="button" class="chip-btn" data-name="place" data-value="상관없음">✨ 상관 없음</button>
           </div>
+          <input type="hidden" name="place" id="place-hidden">
         </div>
 
-        <div class="form-group">
-          <label class="form-label">Q5. 혼자 vs 같이 뭐가 더 좋아요?</label>
-          <div class="radio-group">
-            <label class="radio-item"><input type="radio" name="social" value="혼자"> 혼자</label>
-            <label class="radio-item"><input type="radio" name="social" value="같이"> 같이</label>
-            <label class="radio-item"><input type="radio" name="social" value="둘다"> 둘 다</label>
+       <div class="question-card form-group">
+          <div class="question-num">Q5 · 관계</div>
+          <label class="form-label">혼자 vs 같이 뭐가 더 좋아요?</label>
+          <div class="chip-group" id="social-chips">
+            <button type="button" class="chip-btn" data-name="social" data-value="혼자">🎧 혼자</button>
+            <button type="button" class="chip-btn" data-name="social" data-value="같이">👥 같이</button>
+            <button type="button" class="chip-btn" data-name="social" data-value="둘다">🤝 둘 다</button>
           </div>
+          <input type="hidden" name="social" id="social-hidden">
         </div>
 
         <div class="form-actions">
@@ -94,5 +114,7 @@
   <script src="/shared/layout.js"></script>
   <script src="/shared/data/data.js"></script>
   <script src="/pages/form/form.js"></script>
+  <script src="/pages/form/form-ui.js"></script>
+  </script>
 </body>
 </html>
