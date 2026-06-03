@@ -63,7 +63,12 @@
         var socialIndex = options.social.indexOf(socialVal);
         weights.social[socialIndex].forEach(function (w, i) { scores[i] += w; });
 
-        var best = scores.indexOf(Math.max.apply(null, scores));
+        var maxScore = Math.max.apply(null, scores);
+        var candidates = scores.reduce(function(arr, s, i) {
+          if (s === maxScore) arr.push(i);
+          return arr;
+        }, []);
+        var best = candidates[Math.floor(Math.random() * candidates.length)];
         var h = hobbies[best];
 
         resultEmoji.textContent = h.emoji;
