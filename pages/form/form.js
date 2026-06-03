@@ -69,6 +69,7 @@
           return arr;
         }, []);
         var best = candidates[Math.floor(Math.random() * candidates.length)];
+        var h = hobbies[best];
 
         resultEmoji.textContent = h.emoji;
         resultHobby.textContent = h.name;
