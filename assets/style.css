@@ -482,7 +482,7 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
 .form-progress-label {
   font-size: 0.8rem;
   color: var(--text-light);
-  while-space: nowrap;
+  white-space: nowrap;
   min-width: 60px;
   text-align: right;
 }
@@ -503,7 +503,7 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--primary);
-  letter-spacing: 0.5px
+  letter-spacing: 0.5px;
   margin-bottom: 0.4rem;
   text-transform: uppercase;
 }
@@ -538,7 +538,7 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
   padding: 0.5rem 1.1rem;
   border-radius: 99px;
   border: 1.5px solid var(--border);
-  background: var((--bg);
+  background: var(--bg);
   font-family: inherit;
   font-size: 0.9rem;
   font-weight: 500;
@@ -596,7 +596,7 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
     box-sizing: border-box;
   }
   .question-card{
-    padding: 1.2rem 1.25rem;
+    padding:1.2rem 1.25rem;
   }
   .chip-group {
     gap: 0.5rem;
