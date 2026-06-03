@@ -4,21 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>학기 중 취미 추천 | 게임</title>
-  <link rel="stylesheet" href="../../assets/style.css">
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
-<body>
+<body data-page="game">
 
-  <nav class="nav">
-    <div class="nav-container">
-      <a href="main.html" class="nav-logo">🍀숨쉴 취미.zip</a>
-      <ul class="nav-menu">
-        <li><a href="main.html">메인</a></li>
-        <li><a href="team.html">팀원소개</a></li>
-        <li><a href="game.html" class="active">게임</a></li>
-        <li><a href="form.html">폼</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div id="site-nav"></div>
 
   <main>
     <div class="container">
@@ -31,19 +21,10 @@
       <section id="game-section" style="max-width: 700px; margin: 2rem auto 0;">
         <div class="game-header">
           <span>
-            라운드
-            <strong id="round-num">1</strong>
-            /
-            <strong id="total-rounds">10</strong>
+            라운드 <strong id="round-num">1</strong> / <strong id="total-rounds">10</strong>
           </span>
-
-          <span id="timer" class="timer">
-            ⏰ 10초
-          </span>
-
-          <span class="score">
-            점수 <strong id="score">0</strong>점
-          </span>
+          <span id="timer" class="timer">⏰ 10초</span>
+          <span class="score">점수 <strong id="score">0</strong>점</span>
         </div>
 
         <div class="emoji-display">
@@ -65,21 +46,18 @@
           <p class="result-grade-label">학기 중 취미 이해도</p>
           <h2 id="grade"></h2>
           <p class="result-score-text">
-            총점
-            <strong id="final-score">0</strong>점 /
-            <strong id="max-score">100+</strong>
+            총점 <strong id="final-score">0</strong>점 / <strong id="max-score">100+</strong>
           </p>
-          <a href="form.html" class="btn" style="margin-top: 2rem; display: inline-block;">내 취미 찾으러 가기 →</a>
+          <a href="/pages/form/form.html" class="btn" style="margin-top: 2rem; display: inline-block;">내 취미 찾으러 가기 →</a>
         </div>
       </section>
 
     </div>
   </main>
 
-  <footer class="footer">
-    <p>© 2026 학기 중 취미 추천 · 웹클라이언트컴퓨팅 01분반 · 숨쉴 취미.zip</p>
-  </footer>
+  <div id="site-footer"></div>
 
-  <script src="./game.js"></script>
+  <script src="/shared/layout.js"></script>
+  <script src="/pages/game/game.js"></script>
 </body>
 </html>
