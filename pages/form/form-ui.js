@@ -28,7 +28,7 @@ stressInput.addEventListener('input', () => {
 
 /* 칩 버튼 */
 document.querySelectorAll('.chip-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
+  btn.addEventListener('click', (e) => {
     const name = btn.dataset.name;
     document.querySelectorAll(`.chip-btn[data-name="${name}"]`).forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected');
