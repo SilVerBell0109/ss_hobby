@@ -31,10 +31,10 @@
         e.preventDefault();
 
         var stress = parseInt(document.getElementById("stress").value, 10);
-        var timeVal = document.querySelector("input[name='time']:checked");
-        var moodVal = document.getElementById("mood").value;
-        var placeVal = document.querySelector("input[name='place']:checked");
-        var socialVal = document.querySelector("input[name='social']:checked");
+        var timeVal = document.querySelector("time-hidden").value;
+        var moodVal = document.getElementById("mood-hidden").value;
+        var placeVal = document.querySelector("place-hidden").value;
+        var socialVal = document.querySelector("social-hidden").value
 
         if (!timeVal || !placeVal || !socialVal) {
           alert("모든 항목을 선택해주세요!");
