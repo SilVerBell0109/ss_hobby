@@ -221,6 +221,11 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
   text-decoration: none;
   letter-spacing: 0.02em;
   transition: color 0.2s ease;
+  border: none;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
 }
 
 .section-scroll-link:hover {

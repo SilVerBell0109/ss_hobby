@@ -1,4 +1,12 @@
 (function () {
+  var scrollBtn = document.getElementById("scroll-to-pros");
+  var prosSection = document.getElementById("section-pros");
+  if (scrollBtn && prosSection) {
+    scrollBtn.addEventListener("click", function () {
+      prosSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
   var grid = document.getElementById("preview-grid");
   if (!grid) return;
 
