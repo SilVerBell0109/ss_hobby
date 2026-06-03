@@ -19,9 +19,8 @@
   var resultGuide = document.getElementById("result-guide");
   var resultTip = document.getElementById("result-tip");
 
-  SiteData.fetch()
-    .then(function (data) {
-      var formData = data.form;
+  SiteData.fetchForm()
+    .then(function (formData) {
       var hobbies = formData.hobbies;
       var weights = formData.weights;
       var options = formData.options;
@@ -72,7 +71,7 @@
         var h = hobbies[best];
 
         resultEmoji.textContent = h.emoji;
-        resultHobby.textContent = h.name;
+        resultHobby.textContent = h.formName || h.name;
         resultFrom.textContent = "추천인 : " + h.recommender;
         resultGuide.textContent = h.guide;
         resultTip.textContent = h.tip;

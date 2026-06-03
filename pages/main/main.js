@@ -2,7 +2,7 @@
   var grid = document.getElementById("preview-grid");
   if (!grid) return;
 
-  SiteData.fetch()
+  SiteData.fetchContent()
     .then(function (data) {
       var rows = SiteData.getMembersWithHobbies(data);
 

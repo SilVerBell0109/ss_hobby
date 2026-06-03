@@ -1,0 +1,52 @@
+[
+  {
+    "id": "member-siyeon",
+    "name": "김시연",
+    "studentId": "20230074",
+    "major": "글로벌커뮤니케이션 영어전공",
+    "role": "발표 자료 만들기",
+    "tasks": "발표 자료 구성",
+    "hobbyId": "travel-walk",
+    "previewAvatar": "✈️"
+  },
+  {
+    "id": "member-gayoung",
+    "name": "유가영",
+    "studentId": "20243081",
+    "major": "소프트웨어전공",
+    "role": "페이지 구현",
+    "tasks": "페이지 구현",
+    "hobbyId": "movie-read",
+    "previewAvatar": "🎬"
+  },
+  {
+    "id": "member-beomjo",
+    "name": "장범조",
+    "studentId": "20213073",
+    "major": "소프트웨어전공",
+    "role": "페이지 구현",
+    "tasks": "페이지 구현",
+    "hobbyId": "exercise",
+    "previewAvatar": "💪"
+  },
+  {
+    "id": "member-hojin",
+    "name": "정호진",
+    "studentId": "20203142",
+    "major": "소프트웨어전공",
+    "role": "디자인 UI/UX",
+    "tasks": "디자인 구현",
+    "hobbyId": "comic-read",
+    "previewAvatar": "🧑‍🎨"
+  },
+  {
+    "id": "member-jongeun",
+    "name": "최종은",
+    "studentId": "20233111",
+    "major": "소프트웨어학부",
+    "role": "전체적인 기획",
+    "tasks": "전체적인 기획 및 발표",
+    "hobbyId": "instrument-read",
+    "previewAvatar": "🎸"
+  }
+]

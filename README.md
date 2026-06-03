@@ -69,8 +69,11 @@ project/
 ├── shared/
 │   ├── layout.js   # 공통 nav·footer
 │   └── data/
-│       ├── data.json   # 멤버·취미·폼·게임 데이터
-│       └── data.js     # JSON fetch·조인 유틸
+│       ├── hobbies.json   # 취미 (메인·팀·폼)
+│       ├── members.json   # 팀원 (메인·팀)
+│       ├── form.json      # 폼 가중치·옵션 (취미는 hobbies.json 참조)
+│       ├── game.json      # 게임 라운드·설정
+│       └── data.js        # JSON fetch·조인 유틸
 ├── docs/
 │   └── wireframe.html
 └── vercel.json

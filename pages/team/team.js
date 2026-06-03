@@ -5,7 +5,7 @@
   var modal = document.getElementById("hobby-modal");
   var btnClose = document.getElementById("modal-close");
 
-  SiteData.fetch()
+  SiteData.fetchContent()
     .then(function (data) {
       var rows = SiteData.getMembersWithHobbies(data);
       var byHobbyId = SiteData.hobbyMap(data.hobbies);

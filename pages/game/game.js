@@ -1,7 +1,6 @@
 (function () {
-  SiteData.fetch()
-    .then(function (data) {
-      var cfg = data.game;
+  SiteData.fetchGame()
+    .then(function (cfg) {
       var rounds = cfg.rounds.slice();
       var roundCount = cfg.roundCount || 10;
 
