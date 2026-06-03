@@ -547,14 +547,12 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
   transition: all 0.15s ease;
 }
 .chip-btn:hover{
-  border-color: var(--primary);
-  color: var(--primary);
   background: var(--secondary);
 }
 .chip-btn.selected {
   background: var(--secondary);
   border-color: var(--primary);
-  color: var(--primary);
+  color: #fff;
   font-weight: 700;
 }
 
