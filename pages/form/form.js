@@ -31,10 +31,10 @@
         e.preventDefault();
 
         var stress = parseInt(document.getElementById("stress").value, 10);
-        var timeVal = document.querySelector("time-hidden").value;
+        var timeVal = document.getElementById("time-hidden").value;
         var moodVal = document.getElementById("mood-hidden").value;
-        var placeVal = document.querySelector("place-hidden").value;
-        var socialVal = document.querySelector("social-hidden").value
+        var placeVal = document.getElementById("place-hidden").value;
+        var socialVal = document.getElementById("social-hidden").value;
 
         if (!timeVal || !placeVal || !socialVal) {
           alert("모든 항목을 선택해주세요!");
@@ -51,16 +51,16 @@
               : stressW.high;
         sw.forEach(function (w, i) { scores[i] += w; });
 
-        var timeIndex = options.time.indexOf(timeVal.value);
+        var timeIndex = options.time.indexOf(timeVal);
         weights.time[timeIndex].forEach(function (w, i) { scores[i] += w; });
 
         var moodIndex = options.mood.indexOf(moodVal);
         weights.mood[moodIndex].forEach(function (w, i) { scores[i] += w; });
 
-        var placeIndex = options.place.indexOf(placeVal.value);
+        var placeIndex = options.place.indexOf(placeVal);
         weights.place[placeIndex].forEach(function (w, i) { scores[i] += w; });
 
-        var socialIndex = options.social.indexOf(socialVal.value);
+        var socialIndex = options.social.indexOf(socialVal);
         weights.social[socialIndex].forEach(function (w, i) { scores[i] += w; });
 
         var best = scores.indexOf(Math.max.apply(null, scores));
