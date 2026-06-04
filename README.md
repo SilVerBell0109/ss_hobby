@@ -106,7 +106,7 @@ project/
 
 1. 프로젝트 다운로드
 2. 로컬 서버 실행 후 `/pages/main/main.html` 접속 (예: `npx serve .`)
-3. 또는 배포된 웹사이트 접속 (루트 `/`가 메인으로 연결됨)
+3. 또는 배포된 웹사이트 접속: [https://files-mu-liard.vercel.app/](https://files-mu-liard.vercel.app/)
 
 ---
 
