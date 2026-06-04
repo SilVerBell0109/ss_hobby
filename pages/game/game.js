@@ -31,6 +31,9 @@
       var nextBtn = document.getElementById("next-btn");
       var gameSection = document.getElementById("game-section");
       var resultSection = document.getElementById("result-section");
+      var coverSection = document.getElementById("cover-section");
+      var startBtn = document.getElementById("start-btn");
+      var gameTitleSection = document.getElementById("game-title-section");
       var finalScoreEl = document.getElementById("final-score");
       var maxScoreEl = document.getElementById("max-score");
       var gradeEl = document.getElementById("grade");
@@ -148,7 +151,9 @@
 
         nextBtn.style.display = "inline-block";
       }
-
+      startBtn.addEventListener("click", function () {
+        startGame();
+      });
       nextBtn.addEventListener("click", function () {
         currentRound++;
 
@@ -159,7 +164,27 @@
           scrollToGameHeader();
         }
       });
+      function startGame() {
 
+        gameTitleSection.style.display = "none";
+        coverSection.style.display = "none";
+        gameSection.style.display = "block";
+        resultSection.style.display = "none";
+
+        currentRound = 0;
+        score = 0;
+        streak = 0;
+        answered = false;
+
+        scoreEl.textContent = "0";
+
+      renderRound();
+
+      gameSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+      }
       function showResult() {
         clearInterval(timer);
 
@@ -184,7 +209,7 @@
           grade + "<br><small>" + comment + "</small>";
       }
 
-      renderRound();
+      
     })
     .catch(function (err) {
       console.error(err);
