@@ -7,6 +7,7 @@
     "role": "발표 자료 만들기",
     "tasks": "발표 자료 구성",
     "hobbyId": "travel-walk",
+    "photo": "/assets/images/siyeon.jpg",
     "previewAvatar": "✈️"
   },
   {
@@ -17,6 +18,7 @@
     "role": "페이지 구현",
     "tasks": "페이지 구현",
     "hobbyId": "movie-read",
+    "photo": "/assets/images/gayoung.jpg",
     "previewAvatar": "🎬"
   },
   {
@@ -27,6 +29,7 @@
     "role": "페이지 구현",
     "tasks": "페이지 구현",
     "hobbyId": "exercise",
+    "photo": "/assets/images/beomjo.jpg",
     "previewAvatar": "💪"
   },
   {
@@ -37,6 +40,7 @@
     "role": "디자인 UI/UX",
     "tasks": "디자인 구현",
     "hobbyId": "comic-read",
+    "photo": "/assets/images/hojin.jpg",
     "previewAvatar": "🧑‍🎨"
   },
   {
@@ -47,6 +51,7 @@
     "role": "전체적인 기획",
     "tasks": "전체적인 기획 및 발표",
     "hobbyId": "instrument-read",
+    "photo": "/assets/images/jongeun.jpg",
     "previewAvatar": "🎸"
   }
 ]

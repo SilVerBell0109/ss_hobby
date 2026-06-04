@@ -21,7 +21,18 @@
 
         var photo = document.createElement("div");
         photo.className = "member-photo";
-        photo.textContent = "📷";
+        if (m.photo) {
+          var img = document.createElement("img");
+          img.src = m.photo;
+          img.alt = m.name;
+          img.onerror = function () {
+            photo.removeChild(img);
+            photo.textContent = m.previewAvatar || "📷";
+          };
+          photo.appendChild(img);
+        } else {
+          photo.textContent = m.previewAvatar || "📷";
+        }
 
         var name = document.createElement("h3");
         name.className = "member-name";

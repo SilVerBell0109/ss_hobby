@@ -277,6 +277,7 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
   color: var(--text-light);
   font-size: 2.5rem;
 }
+.member-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; }
 .member-name { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.3rem; }
 .member-info { color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem; }
 .member-detail { font-size: 0.85rem; margin-bottom: 0.4rem; }
