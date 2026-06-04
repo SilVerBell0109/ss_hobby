@@ -44,11 +44,11 @@
 
         var role = document.createElement("p");
         role.className = "member-detail";
-        role.innerHTML = '<span class="label">맡은 역할 :</span> ' + m.role;
+        role.innerHTML = '<span class="label">맡은 역할 :</span><br>' + m.role;
 
         var tasks = document.createElement("p");
         tasks.className = "member-detail";
-        tasks.innerHTML = '<span class="label">수행 업무 :</span> ' + m.tasks;
+        tasks.innerHTML = '<span class="label">수행 업무 :</span><br>' + m.tasks;
 
         var hobbyEl = document.createElement("div");
         hobbyEl.className = "member-hobby";
