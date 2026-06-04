@@ -73,6 +73,21 @@
             "추천인 : " + m.name;
           document.getElementById("modal-guide").textContent = hobby.guide;
           document.getElementById("modal-tip").textContent = hobby.tip;
+
+          var photosEl = document.getElementById("modal-hobby-photos");
+          photosEl.innerHTML = "";
+          if (m.hobbyPhotos && m.hobbyPhotos.length) {
+            m.hobbyPhotos.forEach(function (src) {
+              var img = document.createElement("img");
+              img.src = src;
+              img.className = "modal-hobby-photo";
+              photosEl.appendChild(img);
+            });
+            photosEl.style.display = "flex";
+          } else {
+            photosEl.style.display = "none";
+          }
+
           modal.style.display = "flex";
           document.body.style.overflow = "hidden";
         });

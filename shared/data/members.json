@@ -51,7 +51,8 @@
     "role": "전체적인 기획",
     "tasks": "전체적인 기획 및 발표",
     "hobbyId": "instrument-read",
-    "photo": "/assets/images/jongeun.jpg",
+    "photo": "/assets/images/jongeun/profile.jpg",
+    "hobbyPhotos": ["/assets/images/jongeun/hobby1.jpg", "/assets/images/jongeun/hobby2.jpeg"],
     "previewAvatar": "🎸"
   }
 ]
