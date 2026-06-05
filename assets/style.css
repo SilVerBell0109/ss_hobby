@@ -168,19 +168,16 @@ body[data-page="main"] .section { margin: 6rem 0; }
 .damage-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  border: 1px solid var(--primary);
-  background: var(--card);
+  gap: 1.5rem;
 }
 .damage-card {
-  background: none;
-  padding: 2rem 2.75rem;
-  border-radius: 0;
-  border: none;
-  border-right: 1px solid var(--primary);
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--primary);
   text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
-.damage-card:last-child { border-right: none; }
 .damage-icon { font-size: 1.4rem; margin-bottom: 0.6rem; }
 .damage-card h3 { font-size: 1rem; margin-bottom: 0.4rem; color: var(--text); font-weight: 700; }
 .damage-card p { color: var(--text-light); font-size: 0.9rem; line-height: 1.6; }
@@ -256,13 +253,14 @@ body[data-page="main"] .section { margin: 6rem 0; }
 .pros-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border-top: 1px solid var(--primary);
-  border-left: 1px solid var(--primary);
+  gap: 1.5rem;
 }
 .pros-item {
   padding: 2rem;
-  border-right: 1px solid var(--primary);
-  border-bottom: 1px solid var(--primary);
+  background: var(--card);
+  border: 1px solid var(--primary);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 .pros-item h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
 .pros-item p { color: var(--text-light); font-size: 0.9rem; line-height: 1.7; }
