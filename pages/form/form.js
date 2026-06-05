@@ -61,7 +61,13 @@
 
         var socialIndex = options.social.indexOf(socialVal);
         weights.social[socialIndex].forEach(function (w, i) { scores[i] += w; });
-
+        if (placeVal === "실내") {
+          hobbies.forEach(function (hb, i) {
+            if (hb.id === "travel-walk") {
+              scores[i] = -Infinity;
+            }
+          });
+        }
         var maxScore = Math.max.apply(null, scores);
         var candidates = scores.reduce(function(arr, s, i) {
           if (s === maxScore) arr.push(i);

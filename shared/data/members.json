@@ -16,8 +16,8 @@
     "name": "유가영",
     "studentId": "20243081",
     "major": "소프트웨어전공",
-    "role": "페이지 구현",
-    "tasks": "페이지 구현",
+    "role": "폼 페이지 개발, 메인 페이지 레이아웃",
+    "tasks": "form.html 구현, 5문항 설문 UI 개발, 가중치 기반 매칭 알고리즘 설계, 진행률 바·칩 인터랙션(form-ui.js)",
     "hobbyId": "movie-read",
     "photo": "/assets/images/gayoung.jpg",
     "previewAvatar": "🎬"

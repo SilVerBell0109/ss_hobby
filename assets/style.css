@@ -78,7 +78,9 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
 
 /* 공통 */
 .container { max-width: 1100px; margin: 0 auto; padding: 1rem 2rem; }
+body[data-page="main"] .container { max-width: 1280px; }
 .section { margin: 4rem 0; }
+body[data-page="main"] .section { margin: 6rem 0; }
 .section-title { font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center; }
 .section-subtitle { text-align: center; color: var(--text-light); margin-top: -1rem; margin-bottom: 2rem; }
 
@@ -145,26 +147,37 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
 /* MAIN PAGE */
 .hero {
   text-align: center;
-  padding: 5rem 2rem;
-  background: var(--bg);
+  padding: 8rem 0rem 2rem 2rem;
+  margin-bottom: 0;
+  background: linear-gradient(to bottom, var(--secondary), var(--bg));
 }
-.hero h1 { font-size: 2.6rem; margin-bottom: 1rem; }
-.hero .tagline { color: var(--accent); font-size: 1rem; margin-bottom: 0.8rem; letter-spacing: 2px; }
-.hero p { font-size: 1.1rem; color: var(--text-light); max-width: 600px; margin: 0 auto; }
+.hero h1 { font-size: 3.6rem; line-height: 1.25; margin-bottom: 2rem; word-break: keep-all; }
+.hero .tagline {
+  display: inline-block;
+  background: var(--card);
+  color: var(--accent);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  padding: 0.1rem 1.25rem;
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.hero p { font-size: 1.3rem; color: var(--text-light); max-width: 680px; margin: 0 auto; }
 
 .damage-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
-  border-top: 2px solid var(--primary);
-  border-bottom: 1px solid var(--border);
+  border: 1px solid var(--primary);
+  background: var(--card);
 }
 .damage-card {
   background: none;
-  padding: 1.75rem 1.5rem;
+  padding: 2rem 2.75rem;
   border-radius: 0;
   border: none;
-  border-right: 1px solid var(--border);
+  border-right: 1px solid var(--primary);
   text-align: left;
 }
 .damage-card:last-child { border-right: none; }
@@ -225,7 +238,8 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-light);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 4px;
   letter-spacing: 0.02em;
   transition: color 0.2s ease;
   border: none;
@@ -242,16 +256,22 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
 .pros-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border-top: 1px solid var(--border);
-  border-left: 1px solid var(--border);
+  border-top: 1px solid var(--primary);
+  border-left: 1px solid var(--primary);
 }
 .pros-item {
   padding: 2rem;
-  border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--primary);
+  border-bottom: 1px solid var(--primary);
 }
 .pros-item h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
 .pros-item p { color: var(--text-light); font-size: 0.9rem; line-height: 1.7; }
+.pros-item:nth-child(1), .pros-item:nth-child(4) {
+  background: var(--secondary);
+}
+.pros-item:nth-child(2), .pros-item:nth-child(3) {
+  background: var(--card);
+}
 /* TEAM PAGE */
 
 /* TEAM PAGE */
@@ -402,6 +422,7 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
   border: 1px solid var(--border);
   border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 4px 16px rgba(128,128,128,0.25);
 }
 .concept-col {
   flex: 1;
@@ -475,6 +496,7 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
 .journey-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text); }
 .journey-desc { font-size: 0.88rem; color: var(--text-light); line-height: 1.65; flex: 1; margin-bottom: 1.25rem; }
 .journey-link { font-size: 0.85rem; color: var(--primary); font-weight: 600; }
+.journey-section { padding-top: 4rem; }
 
 /* 게임 시작 화면 */
 .game-cover-card {
@@ -762,11 +784,14 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
   .nav-menu { gap: 1rem; }
   .nav-container { padding: 0 1rem; }
   .container { padding: 1rem 1rem; }
-  .hero { padding: 3rem 1rem; }
-  .hero h1 { font-size: 1.8rem; }
+  .hero { padding: 4.5rem 1rem; }
+  .hero h1 { font-size: 2.4rem; }
+  .hero p { font-size: 1.1rem; }
   .damage-grid, .pros-grid, .team-grid, .preview-grid {
     grid-template-columns: 1fr;
   }
+  .damage-card { border-right: none; border-bottom: 1px solid var(--primary); }
+  .damage-card:last-child { border-bottom: none; }
     .choices {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.7rem;
@@ -774,6 +799,12 @@ h1, h2, h3 { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
   .concept-compare { flex-direction: column; }
   .concept-col:first-child { border-right: none; border-bottom: 1px solid var(--border); }
   .pros-list { grid-template-columns: 1fr; }
+  .pros-item:nth-child(2), .pros-item:nth-child(4) {
+    background: var(--card);
+  }
+  .pros-item:nth-child(1), .pros-item:nth-child(3) {
+    background: var(--secondary);
+  }
   .journey-grid { grid-template-columns: 1fr; }
   .journey-arrow { display: none; }
   .emoji-combo { font-size: 2.5rem; letter-spacing: 0.8rem; }
