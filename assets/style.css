@@ -133,12 +133,16 @@ body[data-page="main"] .section { margin: 6rem 0; }
 
 /* 카드 리프트 호버 */
 .preview-card,
-.member-card {
+.member-card,
+.damage-card,
+.pros-item {
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .preview-card:hover,
-.member-card:hover {
+.member-card:hover,
+.damage-card:hover,
+.pros-item:hover {
   transform: translateY(-3px);
   border-color: var(--secondary);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
