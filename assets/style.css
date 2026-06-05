@@ -788,8 +788,6 @@ body[data-page="main"] .section { margin: 6rem 0; }
   .damage-grid, .pros-grid, .team-grid, .preview-grid {
     grid-template-columns: 1fr;
   }
-  .damage-card { border-right: none; border-bottom: 1px solid var(--primary); }
-  .damage-card:last-child { border-bottom: none; }
     .choices {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.7rem;
