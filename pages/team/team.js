@@ -49,6 +49,11 @@
         tasks.className = "member-detail";
         tasks.innerHTML = '<span class="label">수행 업무</span><br>' + m.tasks;
 
+        var body = document.createElement("div");
+        body.className = "member-body";
+        body.appendChild(role);
+        body.appendChild(tasks);
+
         var hobbyEl = document.createElement("div");
         hobbyEl.className = "member-hobby";
         hobbyEl.dataset.memberId = m.id;
@@ -58,8 +63,7 @@
         card.appendChild(photo);
         card.appendChild(name);
         card.appendChild(info);
-        card.appendChild(role);
-        card.appendChild(tasks);
+        card.appendChild(body);
         card.appendChild(hobbyEl);
         grid.appendChild(card);
 

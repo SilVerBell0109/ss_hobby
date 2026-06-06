@@ -300,10 +300,14 @@ button.preview-card {
   height: 500px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  word-break: keep-all;
 }
 .member-photo {
   width: 100%;
   height: 180px;
+  flex-shrink: 0;
   background: var(--surface);
   border-radius: 8px;
   margin-bottom: 1rem;
@@ -314,12 +318,25 @@ button.preview-card {
   font-size: 2.5rem;
 }
 .member-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; }
-.member-name { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.3rem; }
-.member-info { color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem; }
+.member-name { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.3rem; flex-shrink: 0; }
+.member-info { color: var(--text-light); font-size: 0.9rem; margin-bottom: 0.75rem; flex-shrink: 0; }
+.member-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+.member-body::-webkit-scrollbar { width: 4px; }
+.member-body::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 99px;
+}
 .member-detail { font-size: 0.85rem; margin-bottom: 0.4rem; }
+.member-detail:last-child { margin-bottom: 0; }
 .member-detail .label { color: var(--primary); font-weight: 700; }
 .member-hobby {
-  margin-top: 1rem;
+  margin-top: auto;
+  flex-shrink: 0;
   padding-top: 1rem;
   border-top: 1px dashed var(--border);
   color: var(--accent);
