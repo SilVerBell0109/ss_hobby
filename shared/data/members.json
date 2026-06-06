@@ -21,9 +21,10 @@
     "role": "폼 페이지 개발, 메인 페이지 레이아웃",
     "tasks": "form.html 구현, 5문항 설문 UI 개발, 가중치 기반 매칭 알고리즘 설계, 진행률 바·칩 인터랙션(form-ui.js)",
     "hobbyIds": ["movie-watch", "reading"],
-    "teamGuide": "영화와 책 속의 다른 세상에 몰입해보세요. 시험 스트레스를 잊게 해주는 가장 빠른 방법입니다.",
-    "teamTip": "자기 전 20분이라도 투자해보는 걸 추천합니다! 짧아도 충분히 힐링이 돼요.",
-    "photo": "/assets/images/gayoung.jpg",
+    "teamGuide": "잡생각이 많을 때 영화나 책 속 세상에 몰입하면서 현실의 힘든 생각을 강제로 멈출 수 있어요! 생각을 오래한다고 좋은 건 아니니까 생각이 너무 많아 힘들때 도전해보세요!",
+    "teamTip": "어떤 영화나 책을 봐야할지 모르겠다면 일단 좋아하는 장르나 유명한 것부터 도장깨기하듯이 보는 것을 추천해요! 그리고 한 번에 꼭 다 봐야한다는 부담감을 버리면 편해집니당..",
+    "photo": "/assets/images/gayoung/profile.jpg",
+    "hobbyPhotos": ["/assets/images/gayoung/hobby1.jpg", "/assets/images/gayoung/hobby2.jpg"],
     "previewAvatar": "🎬"
   },
   {
