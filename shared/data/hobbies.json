@@ -1,50 +1,44 @@
 [
   {
-    "id": "travel-walk",
-    "name": "여행 · 산책",
-    "formName": "여행",
-    "emoji": "🚶✈️",
-    "cardEmoji": "🚶",
-    "recommender": "김시연",
-    "guide": "낯선 나라나 도시에서 혼자만의 시간을 즐겨보세요! 압박감없는 곳에서의 힐링이란 ,, 정말 최고에요 !",
-    "tip": "짧게 갈 수 있는 곳으로는 대만, 일본을 추천해요! 여행이 어렵다면 청계천 산책이나 가까운 곳 당일치기를 추천해요!"
+    "id": "travel",
+    "name": "여행",
+    "emoji": "✈️",
+    "cardEmoji": "✈️"
   },
   {
-    "id": "movie-read",
-    "name": "영화 시청 · 독서",
-    "formName": "영화 시청",
-    "emoji": "🎬📖",
-    "cardEmoji": "🎬",
-    "recommender": "유가영",
-    "guide": "영화와 책 속의 다른 세상에 몰입해보세요. 시험 스트레스를 잊게 해주는 가장 빠른 방법입니다.",
-    "tip": "자기 전 20분이라도 투자해보는 걸 추천합니다! 짧아도 충분히 힐링이 돼요."
+    "id": "neighborhood-walk",
+    "name": "산책",
+    "emoji": "🚶",
+    "cardEmoji": "🚶"
+  },
+  {
+    "id": "movie-watch",
+    "name": "영화 시청",
+    "emoji": "🎬",
+    "cardEmoji": "🎬"
+  },
+  {
+    "id": "reading",
+    "name": "독서",
+    "emoji": "📖",
+    "cardEmoji": "📖"
   },
   {
     "id": "exercise",
     "name": "운동",
-    "emoji": "💪🏃",
-    "cardEmoji": "💪",
-    "recommender": "장범조",
-    "guide": "땀 흘리는 운동부터 시작해보세요. 정직한 노력은 배신하지 않습니다.",
-    "tip": "과제로 지칠 땐 에너지 넘치는 축구 경기 한 판이 뇌를 깨워줍니다."
+    "emoji": "💪",
+    "cardEmoji": "💪"
   },
   {
     "id": "comic-read",
     "name": "만화책 읽기",
-    "emoji": "🧑‍🎨📚",
-    "cardEmoji": "🧑‍🎨",
-    "recommender": "정호진",
-    "guide": "바쁜 하루가 끝나고 새벽에 좋아하는 만화를 펼쳐보세요. 그 시간이 진짜 힐링 타임이 됩니다.",
-    "tip": "좋아하는 만화는 몇 번을 봐도 질리지 않아요. 여유가 생기면 직접 그려보는 것도 추천합니다..ㅎㅎ"
+    "emoji": "🧑‍🎨",
+    "cardEmoji": "🧑‍🎨"
   },
   {
-    "id": "instrument-read",
-    "name": "악기 연주 · 독서",
-    "formName": "악기 연주",
-    "emoji": "🎸📖",
-    "cardEmoji": "🎸",
-    "recommender": "최종은",
-    "guide": "소설책이 너무 길다면 시집으로 시작해보세요! 숏폼 문학이라고 생각하시면 편합니다. 악기연주는 꾸준히 하는 취미에요. 하루에 30분정도만 투자하셔도 충분합니다",
-    "tip": "주머니에 들어갈만한 작은 시집을 사는걸 추천해용! 악기 입문은 일렉기타가 제일 좋은 것 같습니다. 요즘 좋은 강의도 많고 장비도 많아서 진입장벽이 많이 낮아졌어용"
+    "id": "instrument",
+    "name": "악기 연주",
+    "emoji": "🎸",
+    "cardEmoji": "🎸"
   }
 ]

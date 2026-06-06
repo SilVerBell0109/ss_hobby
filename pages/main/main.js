@@ -17,15 +17,15 @@
       grid.innerHTML = "";
       rows.forEach(function (row) {
         var m = row.member;
-        var h = row.hobby;
-        if (!h) return;
+        var d = row.display;
+        if (!row.hobbies.length) return;
 
         var card = document.createElement("div");
         card.className = "preview-card";
 
         var avatar = document.createElement("div");
         avatar.className = "preview-avatar";
-        avatar.textContent = m.previewAvatar || h.cardEmoji || "";
+        avatar.textContent = m.previewAvatar || d.cardEmoji || "";
 
         var name = document.createElement("p");
         name.className = "name";
@@ -33,7 +33,7 @@
 
         var hobby = document.createElement("p");
         hobby.className = "hobby";
-        hobby.textContent = h.name;
+        hobby.textContent = d.name;
 
         card.appendChild(avatar);
         card.appendChild(name);

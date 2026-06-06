@@ -19,9 +19,11 @@
   var resultGuide = document.getElementById("result-guide");
   var resultTip = document.getElementById("result-tip");
 
+  var OUTDOOR_HOBBY_IDS = ["travel", "neighborhood-walk"];
+
   SiteData.fetchForm()
     .then(function (formData) {
-      var hobbies = formData.hobbies;
+      var recommendations = formData.recommendations;
       var weights = formData.weights;
       var options = formData.options;
       var stressW = weights.stress;
@@ -35,12 +37,12 @@
         var placeVal = document.getElementById("place-hidden").value;
         var socialVal = document.getElementById("social-hidden").value;
 
-        if (!timeVal || !placeVal || !socialVal) {
+        if (!timeVal || !moodVal || !placeVal || !socialVal) {
           alert("모든 항목을 선택해주세요!");
           return;
         }
 
-        var scores = hobbies.map(function () { return 0; });
+        var scores = recommendations.map(function () { return 0; });
 
         var sw =
           stress <= stressW.lowMax
@@ -61,26 +63,32 @@
 
         var socialIndex = options.social.indexOf(socialVal);
         weights.social[socialIndex].forEach(function (w, i) { scores[i] += w; });
+
         if (placeVal === "실내") {
-          hobbies.forEach(function (hb, i) {
-            if (hb.id === "travel-walk") {
+          recommendations.forEach(function (rec, i) {
+            var hasOutdoor = rec.hobbyIds.some(function (id) {
+              return OUTDOOR_HOBBY_IDS.indexOf(id) >= 0;
+            });
+            if (hasOutdoor) {
               scores[i] = -Infinity;
             }
           });
         }
+
         var maxScore = Math.max.apply(null, scores);
-        var candidates = scores.reduce(function(arr, s, i) {
+        var candidates = scores.reduce(function (arr, s, i) {
           if (s === maxScore) arr.push(i);
           return arr;
         }, []);
         var best = candidates[Math.floor(Math.random() * candidates.length)];
-        var h = hobbies[best];
+        var rec = recommendations[best];
+        var d = rec.display;
 
-        resultEmoji.textContent = h.emoji;
-        resultHobby.textContent = h.formName || h.name;
-        resultFrom.textContent = "추천인 : " + h.recommender;
-        resultGuide.textContent = h.guide;
-        resultTip.textContent = h.tip;
+        resultEmoji.textContent = d.emoji;
+        resultHobby.textContent = d.name;
+        resultFrom.textContent = "추천인 : " + rec.recommender;
+        resultGuide.textContent = d.guide;
+        resultTip.textContent = d.tip;
 
         resultBox.style.display = "block";
         resultBox.scrollIntoView({ behavior: "smooth" });

@@ -1,34 +1,31 @@
 {
-  "hobbyIds": [
-    "comic-read",
-    "movie-read",
-    "instrument-read",
-    "exercise",
-    "travel-walk"
+  "recommendations": [
+    {
+      "memberId": "member-hojin",
+      "hobbyIds": ["comic-read"]
+    },
+    {
+      "memberId": "member-gayoung",
+      "hobbyIds": ["movie-watch", "reading"]
+    },
+    {
+      "memberId": "member-jongeun",
+      "hobbyIds": ["instrument", "reading"]
+    },
+    {
+      "memberId": "member-beomjo",
+      "hobbyIds": ["exercise"]
+    },
+    {
+      "memberId": "member-siyeon",
+      "hobbyIds": ["travel", "neighborhood-walk"]
+    }
   ],
   "options": {
-    "time": [
-      "10분",
-      "30분",
-      "1시간",
-      "그 이상"
-    ],
-    "mood": [
-      "활기참",
-      "평온함",
-      "지침",
-      "우울함"
-    ],
-    "place": [
-      "실내",
-      "실외",
-      "상관없음"
-    ],
-    "social": [
-      "혼자",
-      "같이",
-      "둘다"
-    ]
+    "time": ["10분", "30분", "1시간", "그 이상"],
+    "mood": ["활기참", "평온함", "지침", "우울함"],
+    "place": ["실내", "실외", "상관없음"],
+    "social": ["혼자", "같이", "둘다"]
   },
   "weights": {
     "stress": {
