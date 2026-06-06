@@ -225,11 +225,7 @@ body[data-page="main"] .section { margin: 6rem 0; }
 .section-scroll-wrap {
   text-align: center;
   margin-top: 2.5rem;
-  margin-bottom: 10rem;
-}
-
-#section-pros {
-  margin-top: 2rem;
+  margin-bottom: 0;
 }
 
 .section-scroll-link {
@@ -495,7 +491,7 @@ body[data-page="main"] .section { margin: 6rem 0; }
 .journey-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text); }
 .journey-desc { font-size: 0.88rem; color: var(--text-light); line-height: 1.65; flex: 1; margin-bottom: 1.25rem; }
 .journey-link { font-size: 0.85rem; color: var(--primary); font-weight: 600; }
-.journey-section { padding-top: 4rem; }
+.journey-section { padding-top: 2rem; }
 
 /* 게임 시작 화면 */
 .game-cover-card {

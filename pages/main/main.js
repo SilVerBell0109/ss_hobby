@@ -1,9 +1,9 @@
 (function () {
-  var scrollBtn = document.getElementById("scroll-to-pros");
-  var prosSection = document.getElementById("section-pros");
-  if (scrollBtn && prosSection) {
+  var scrollBtn = document.getElementById("scroll-to-concept");
+  var conceptSection = document.getElementById("section-concept");
+  if (scrollBtn && conceptSection) {
     scrollBtn.addEventListener("click", function () {
-      prosSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      conceptSection.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
 
