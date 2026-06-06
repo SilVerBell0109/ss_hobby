@@ -5,7 +5,7 @@
     "studentId": "20230074",
     "major": "글로벌커뮤니케이션 영어전공",
     "role": "발표 자료 만들기, 폼 페이지 카드 구현, 시연 영상 제작",
-    "tasks": "발표 자료 구성",
+    "tasks": "발표 자료 구성, 폼 페이지 카드 구현, 폼 페이지 버튼 구현 및 수정",
     "hobbyId": "travel-walk",
     "photo": "/assets/images/siyeon/profile.jpg",
     "hobbyPhotos": ["/assets/images/siyeon/hobby1.jpeg", "/assets/images/siyeon/hobby2.jpeg"],
