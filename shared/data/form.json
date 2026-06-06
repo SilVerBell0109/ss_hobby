@@ -27,6 +27,12 @@
     "place": ["실내", "실외", "상관없음"],
     "social": ["혼자", "같이", "둘다"]
   },
+  "secondary": {
+    "count": 3,
+    "minSemesterScore": 4,
+    "excludePrimaryIds": true,
+    "title": "이런 취미는 어때요?"
+  },
   "weights": {
     "stress": {
       "lowMax": 3,

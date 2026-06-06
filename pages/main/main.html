@@ -116,7 +116,7 @@
         <a href="/pages/form/form.html" class="journey-card">
           <span class="journey-step">03</span>
           <h3 class="journey-title">진단받고 매칭받기</h3>
-          <p class="journey-desc">설문에 답하면 자신에게 맞는 1가지 추천</p>
+          <p class="journey-desc">설문에 답하면 맞춤 취미 추천</p>
           <span class="journey-link">바로가기 →</span>
         </a>
       </div>
@@ -135,6 +135,24 @@
   </div>
 
   <div id="site-footer"></div>
+
+  <div id="hobby-modal" class="modal-overlay" style="display:none;">
+    <div class="modal-box">
+      <button type="button" class="modal-close" id="modal-close" aria-label="닫기">×</button>
+      <div class="modal-emoji" id="modal-emoji"></div>
+      <h2 class="modal-hobby-name" id="modal-hobby-name"></h2>
+      <p class="modal-recommender" id="modal-recommender"></p>
+      <div class="modal-section">
+        <p class="modal-section-label">어떻게 시작하나요?</p>
+        <p id="modal-guide"></p>
+      </div>
+      <div class="modal-section">
+        <p class="modal-section-label">학기중 꿀팁</p>
+        <p id="modal-tip"></p>
+      </div>
+      <div id="modal-hobby-photos" class="modal-hobby-photos" style="display:none;"></div>
+    </div>
+  </div>
 
   <script src="/shared/layout.js"></script>
   <script src="/shared/data/data.js"></script>

@@ -15,7 +15,7 @@
 
       <section style="padding: 3rem 0 1rem;">
         <h1 class="section-title" style="font-size: 2.5rem;">너에게 맞는 학기 중 취미 찾기</h1>
-        <p class="section-subtitle">간단한 설문 후 5가지 중 하나의 취미가 추천됩니다</p>
+        <p class="section-subtitle">설문 후 팀원 추천 취미와 맞춤 취미를 함께 받아보세요</p>
       </section>
 
       <div class="form-progress-wrap">
@@ -93,8 +93,9 @@
 
       </form>
 
-      <div id="result-box" class="result-box" style="display:none;">
-        <div id="result-emoji" style="font-size:2.5rem; margin-bottom:0.5rem;"></div>
+      <div id="result-box" class="result-box result-box--team" style="display:none;">
+        <p class="result-section-label">팀원 추천</p>
+        <div id="result-emoji" class="result-emoji"></div>
         <p class="result-label">추천 취미</p>
         <h2 class="result-hobby" id="result-hobby"></h2>
         <p class="result-from" id="result-from"></p>
@@ -106,10 +107,32 @@
         </div>
       </div>
 
+      <section id="secondary-box" class="section form-secondary-section" style="display:none;">
+        <h2 class="section-title" id="secondary-title">이런 취미는 어때요?</h2>
+        <p class="section-subtitle" id="secondary-desc">카드를 눌러 시작 방법과 팁을 확인해보세요</p>
+        <div id="secondary-list" class="preview-grid preview-grid--form"></div>
+      </section>
+
     </div>
   </main>
 
   <div id="site-footer"></div>
+
+  <div id="secondary-modal" class="modal-overlay" style="display:none;">
+    <div class="modal-box">
+      <button type="button" class="modal-close" id="secondary-modal-close" aria-label="닫기">×</button>
+      <div class="modal-emoji" id="secondary-modal-emoji"></div>
+      <h2 class="modal-hobby-name" id="secondary-modal-name"></h2>
+      <div class="modal-section">
+        <p class="modal-section-label">어떻게 시작하나요?</p>
+        <p id="secondary-modal-guide"></p>
+      </div>
+      <div class="modal-section">
+        <p class="modal-section-label">학기 중 꿀팁</p>
+        <p id="secondary-modal-tip"></p>
+      </div>
+    </div>
+  </div>
 
   <script src="/shared/layout.js"></script>
   <script src="/shared/data/data.js"></script>

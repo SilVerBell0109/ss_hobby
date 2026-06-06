@@ -99,6 +99,104 @@
     });
   }
 
+  // 2차 추천: tags·semester 있는 단일 취미 풀
+  function buildSecondaryPool(hobbies, form) {
+    var cfg = form.secondary || {};
+    var minScore = cfg.minSemesterScore != null ? cfg.minSemesterScore : 4;
+    return hobbies.filter(function (h) {
+      if (!h.tags || !h.semester) return false;
+      return h.semester.score >= minScore;
+    });
+  }
+
+  function stressIndex(stress, lowMax, midMax) {
+    if (stress <= lowMax) return 0;
+    if (stress <= midMax) return 1;
+    return 2;
+  }
+
+  // 태그 기반 점수 (2차 추천)
+  function scoreHobbyByTags(hobby, stress, timeVal, moodVal, placeVal, socialVal, stressCfg) {
+    if (!hobby.tags) return -Infinity;
+
+    var tags = hobby.tags;
+    var si = stressIndex(stress, stressCfg.lowMax, stressCfg.midMax);
+    var score = (tags.stress && tags.stress[si]) || 0;
+
+    if (tags.time.indexOf(timeVal) >= 0) score += 3;
+    if (tags.mood.indexOf(moodVal) >= 0) score += 3;
+
+    if (tags.place.indexOf(placeVal) >= 0) {
+      score += 3;
+    } else if (placeVal === "상관없음") {
+      score += 2;
+    } else if (placeVal === "실내" && tags.place.indexOf("실내") < 0) {
+      return -Infinity;
+    } else if (placeVal === "실외" && tags.place.indexOf("실외") < 0) {
+      return -Infinity;
+    }
+
+    if (tags.social.indexOf(socialVal) >= 0) {
+      score += 3;
+    } else if (socialVal === "둘다") {
+      score += 2;
+    }
+
+    return score;
+  }
+
+  function pickSecondaryHobbies(pool, inputs, cfg, excludeIds) {
+    var count = cfg.count || 3;
+    var exclude = {};
+    (excludeIds || []).forEach(function (id) {
+      exclude[id] = true;
+    });
+
+    var scored = pool
+      .filter(function (h) {
+        return !exclude[h.id];
+      })
+      .map(function (h) {
+        return {
+          hobby: h,
+          score: scoreHobbyByTags(
+            h,
+            inputs.stress,
+            inputs.time,
+            inputs.mood,
+            inputs.place,
+            inputs.social,
+            inputs.stressCfg
+          )
+        };
+      })
+      .filter(function (row) {
+        return row.score > -Infinity;
+      })
+      .sort(function (a, b) {
+        return b.score - a.score;
+      });
+
+    var picked = [];
+    var i = 0;
+    while (picked.length < count && i < scored.length) {
+      var score = scored[i].score;
+      var tied = scored.filter(function (row) {
+        return row.score === score;
+      });
+      tied.sort(function () {
+        return Math.random() - 0.5;
+      });
+      tied.forEach(function (row) {
+        if (picked.length >= count) return;
+        if (picked.some(function (p) { return p.id === row.hobby.id; })) return;
+        picked.push(row.hobby);
+      });
+      i += tied.length;
+    }
+    return picked;
+  }
+
   window.SiteData = {
     // 메인·팀: 취미 + 팀원
     fetchContent: function () {
@@ -119,6 +217,8 @@
         var form = parts[2];
         return {
           recommendations: buildFormRecommendations(parts[0], parts[1], form),
+          secondaryPool: buildSecondaryPool(parts[0], form),
+          secondary: form.secondary || {},
           options: form.options,
           weights: form.weights
         };
@@ -131,6 +231,7 @@
     hobbyMap: hobbyMap,
     getHobbiesByIds: getHobbiesByIds,
     buildHobbyDisplay: buildHobbyDisplay,
-    getMembersWithHobbies: getMembersWithHobbies
+    getMembersWithHobbies: getMembersWithHobbies,
+    pickSecondaryHobbies: pickSecondaryHobbies
   };
 })();

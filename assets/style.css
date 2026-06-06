@@ -212,6 +212,24 @@ body[data-page="main"] .section { margin: 6rem 0; }
 .preview-card .name { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.2rem; }
 .preview-card .hobby { color: var(--accent); font-size: 0.85rem; }
 
+.preview-grid--form {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+button.preview-card {
+  width: 100%;
+  cursor: pointer;
+  font-family: inherit;
+  appearance: none;
+}
+
+.form-secondary-section {
+  padding-top: 0;
+  margin-top: 3rem;
+}
+
 .cta { text-align: center; padding: 3rem 0; }
 
 .cta .btn,
@@ -636,6 +654,11 @@ body[data-page="main"] .section { margin: 6rem 0; }
 
 /* FORM PAGE */
 .form-container { max-width: 600px; margin: 0 auto; }
+body[data-page="form"] .result-box {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .form-group { margin-bottom: 1.8rem; }
 .form-label { display: block; margin-bottom: 0.6rem; font-weight: 700; font-size :1rem; }
 .form-input, .form-select {
@@ -761,6 +784,21 @@ body[data-page="main"] .section { margin: 6rem 0; }
   margin-top: 2rem;
   text-align: center;
 }
+.result-section-label {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: var(--surface);
+}
+.result-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
 .result-label { color: var(--accent); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
 .result-hobby { font-family: 'Noto Sans KR', sans-serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; }
 .result-from { color: var(--text-light); font-size: 0.9rem; margin-bottom: 1.5rem; }
@@ -825,6 +863,18 @@ body[data-page="main"] .section { margin: 6rem 0; }
   }
   .result-hobby {
     font-size: 1.5rem;
+  }
+  .preview-grid--form {
+    max-width: 100%;
+    gap: 0.65rem;
+  }
+  .preview-grid--form .preview-avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+  .preview-grid--form .preview-card {
+    padding: 1rem 0.5rem;
   }
 
 
