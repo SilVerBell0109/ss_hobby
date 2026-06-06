@@ -8,13 +8,12 @@
   SiteData.fetchContent()
     .then(function (data) {
       var rows = SiteData.getMembersWithHobbies(data);
-      var byHobbyId = SiteData.hobbyMap(data.hobbies);
 
       grid.innerHTML = "";
       rows.forEach(function (row) {
         var m = row.member;
-        var h = row.hobby;
-        if (!h) return;
+        var d = row.display;
+        if (!row.hobbies.length) return;
 
         var card = document.createElement("div");
         card.className = "member-card";
@@ -52,9 +51,9 @@
 
         var hobbyEl = document.createElement("div");
         hobbyEl.className = "member-hobby";
-        hobbyEl.dataset.hobbyId = m.hobbyId;
+        hobbyEl.dataset.memberId = m.id;
         hobbyEl.textContent =
-          (h.cardEmoji || "") + " 추천 취미 : " + h.name;
+          (d.cardEmoji || "") + " 추천 취미 : " + d.name;
 
         card.appendChild(photo);
         card.appendChild(name);
@@ -65,14 +64,12 @@
         grid.appendChild(card);
 
         hobbyEl.addEventListener("click", function () {
-          var hobby = byHobbyId[hobbyEl.dataset.hobbyId];
-          if (!hobby) return;
-          document.getElementById("modal-emoji").textContent = hobby.emoji;
-          document.getElementById("modal-hobby-name").textContent = hobby.name;
+          document.getElementById("modal-emoji").textContent = d.emoji;
+          document.getElementById("modal-hobby-name").textContent = d.name;
           document.getElementById("modal-recommender").textContent =
             "추천인 : " + m.name;
-          document.getElementById("modal-guide").textContent = hobby.guide;
-          document.getElementById("modal-tip").textContent = hobby.tip;
+          document.getElementById("modal-guide").textContent = d.guide;
+          document.getElementById("modal-tip").textContent = d.tip;
 
           var photosEl = document.getElementById("modal-hobby-photos");
           photosEl.innerHTML = "";
