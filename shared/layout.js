@@ -7,6 +7,7 @@
   var NAV_ITEMS = [
     { id: "main", href: "/pages/main/main.html", label: "메인" },
     { id: "team", href: "/pages/team/team.html", label: "팀원소개" },
+    { id: "hobbies", href: "/pages/hobbies/hobbies.html", label: "취미도감" },
     { id: "game", href: "/pages/game/game.html", label: "게임" },
     { id: "form", href: "/pages/form/form.html", label: "폼" }
   ];

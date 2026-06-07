@@ -1,4 +1,8 @@
 import { SiteData } from "/shared/data/data.js";
+import {
+  createHobbyBadgesEl,
+  fillHobbyModalMeta
+} from "/pages/hobbies/hobby-ui.js";
 import "./form-ui.js";
 
 var form = document.getElementById("hobby-form");
@@ -20,15 +24,19 @@ var secondaryModal = document.getElementById("secondary-modal");
 var secondaryModalClose = document.getElementById("secondary-modal-close");
 var secondaryModalEmoji = document.getElementById("secondary-modal-emoji");
 var secondaryModalName = document.getElementById("secondary-modal-name");
+var secondaryModalMeta = document.getElementById("secondary-modal-meta");
 var secondaryModalGuide = document.getElementById("secondary-modal-guide");
 var secondaryModalTip = document.getElementById("secondary-modal-tip");
 
 var OUTDOOR_HOBBY_IDS = ["travel", "neighborhood-walk"];
+var teamByHobbyId = {};
+var minSemesterScore = 4;
 
 function openSecondaryModal(hobby) {
   if (!secondaryModal) return;
-  secondaryModalEmoji.textContent = hobby.emoji || "";
+  secondaryModalEmoji.textContent = hobby.emoji || hobby.cardEmoji || "";
   secondaryModalName.textContent = hobby.name || "";
+  fillHobbyModalMeta(secondaryModalMeta, hobby, teamByHobbyId, minSemesterScore);
   secondaryModalGuide.textContent = hobby.guide || "";
   secondaryModalTip.textContent = hobby.tip || "";
   secondaryModal.style.display = "flex";
@@ -65,7 +73,10 @@ function renderSecondaryList(hobbies) {
   hobbies.forEach(function (h) {
     var btn = document.createElement("button");
     btn.type = "button";
-    btn.className = "preview-card secondary-preview-card";
+    btn.className = "preview-card preview-card--hobby secondary-preview-card";
+
+    var badges = createHobbyBadgesEl(h, teamByHobbyId, minSemesterScore);
+    if (badges) btn.appendChild(badges);
 
     var avatar = document.createElement("div");
     avatar.className = "preview-avatar";
@@ -94,6 +105,9 @@ SiteData.fetchForm()
     var weights = formData.weights;
     var options = formData.options;
     var stressW = weights.stress;
+
+    teamByHobbyId = formData.teamByHobbyId || {};
+    minSemesterScore = formData.minSemesterScore != null ? formData.minSemesterScore : 4;
 
     if (secondaryTitle && secondaryCfg.title) {
       secondaryTitle.textContent = secondaryCfg.title;

@@ -2,7 +2,7 @@
   "recommendations": [
     {
       "memberId": "member-hojin",
-      "hobbyIds": ["comic-read"]
+      "hobbyIds": ["comic-read", "singing"]
     },
     {
       "memberId": "member-gayoung",

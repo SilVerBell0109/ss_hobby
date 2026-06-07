@@ -169,6 +169,19 @@ body[data-page="main"] .section { margin: 6rem 0; }
 }
 .hero p { font-size: 1.3rem; color: var(--text-light); max-width: 680px; margin: 0 auto; }
 
+.hero--sub {
+  padding: 4.5rem 1rem 2.25rem;
+}
+
+.hero--sub h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero--sub p {
+  font-size: 1.1rem;
+}
+
 .damage-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -216,6 +229,129 @@ body[data-page="main"] .section { margin: 6rem 0; }
   grid-template-columns: repeat(3, minmax(0, 1fr));
   max-width: 540px;
   margin: 0 auto;
+}
+
+body[data-page="hobbies"] .container {
+  max-width: 1280px;
+  width: 100%;
+  min-width: 0;
+}
+
+.hobbies-toolbar {
+  margin-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.hobbies-filter {
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.hobbies-toolbar-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hobbies-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.35rem 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin: 0;
+}
+
+.hobbies-legend-sep {
+  color: var(--border);
+}
+
+.hobbies-count {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin: 0;
+  margin-left: auto;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.hobbies-empty {
+  text-align: center;
+  color: var(--text-light);
+  padding: 2rem 0 3rem;
+}
+
+.preview-grid.preview-grid--hobbies {
+  width: 100%;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.preview-grid--hobbies .preview-card--hobby {
+  min-width: 0;
+}
+
+.preview-card--hobby {
+  position: relative;
+  padding-top: 1.85rem;
+}
+
+.hobby-card-badges {
+  position: absolute;
+  top: 0.45rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  padding: 0 0.35rem;
+}
+
+.hobby-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 99px;
+  line-height: 1.2;
+}
+
+.hobby-badge--semester {
+  background: rgba(77, 177, 144, 0.15);
+  color: var(--primary);
+}
+
+.hobby-badge--semester-low {
+  background: rgba(116, 116, 116, 0.12);
+  color: var(--text-light);
+}
+
+.hobby-badge--team {
+  background: rgba(255, 193, 7, 0.22);
+  color: #9a7200;
+}
+
+.hobby-badge--neutral {
+  background: var(--surface);
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.modal-hobby-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 1023px) {
+  .preview-grid.preview-grid--hobbies {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 button.preview-card {
@@ -793,6 +929,17 @@ body[data-page="form"] .result-box {
   font-weight: 700;
 }
 
+.hobbies-filter .chip-btn.selected {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.hobbies-filter .chip-btn.selected:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
 .result-box {
   background: var(--card);
   border: 1px solid var(--border);
@@ -836,7 +983,9 @@ body[data-page="form"] .result-box {
   .hero { padding: 4.5rem 1rem; }
   .hero h1 { font-size: 2.4rem; }
   .hero p { font-size: 1.1rem; }
-  .damage-grid, .pros-grid, .team-grid, .preview-grid {
+  .hero--sub { padding: 3.5rem 1rem 1.75rem; }
+  .hero--sub h1 { font-size: 2rem; }
+  .damage-grid, .pros-grid, .team-grid, .preview-grid:not(.preview-grid--hobbies):not(.preview-grid--form) {
     grid-template-columns: 1fr;
   }
     .choices {
@@ -892,6 +1041,23 @@ body[data-page="form"] .result-box {
   }
   .preview-grid--form .preview-card {
     padding: 1rem 0.5rem;
+  }
+  .preview-grid--form .preview-card--hobby {
+    padding: 1.25rem 0.5rem 1rem;
+    padding-top: 1.65rem;
+  }
+  .preview-grid.preview-grid--hobbies {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+  .preview-card--hobby {
+    padding: 1.25rem 0.5rem 1rem;
+    padding-top: 1.65rem;
+  }
+  .preview-grid--hobbies .preview-avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
   }
 
 

@@ -144,6 +144,26 @@ var cache = {};
     return score;
   }
 
+  function buildTeamHobbyRecommenders(members) {
+    var map = {};
+    (members || []).forEach(function (m) {
+      (m.hobbyIds || []).forEach(function (id) {
+        if (!map[id]) map[id] = [];
+        map[id].push(m.name);
+      });
+    });
+    return map;
+  }
+
+  function sortHobbiesForCatalog(hobbies) {
+    return hobbies.slice().sort(function (a, b) {
+      var sa = (a.semester && a.semester.score) || 0;
+      var sb = (b.semester && b.semester.score) || 0;
+      if (sb !== sa) return sb - sa;
+      return (a.name || "").localeCompare(b.name || "", "ko");
+    });
+  }
+
   function pickSecondaryHobbies(pool, inputs, cfg, excludeIds) {
     var count = cfg.count || 3;
     var exclude = {};
@@ -214,12 +234,18 @@ export var SiteData = {
         loadJson(PATHS.form)
       ]).then(function (parts) {
         var form = parts[2];
+        var minSemesterScore =
+          form.secondary && form.secondary.minSemesterScore != null
+            ? form.secondary.minSemesterScore
+            : 4;
         return {
           recommendations: buildFormRecommendations(parts[0], parts[1], form),
           secondaryPool: buildSecondaryPool(parts[0], form),
           secondary: form.secondary || {},
           options: form.options,
-          weights: form.weights
+          weights: form.weights,
+          teamByHobbyId: buildTeamHobbyRecommenders(parts[1]),
+          minSemesterScore: minSemesterScore
         };
       });
     },
@@ -227,9 +253,28 @@ export var SiteData = {
     fetchGame: function () {
       return loadJson(PATHS.game);
     },
+    fetchCatalog: function () {
+      return Promise.all([
+        loadJson(PATHS.hobbies),
+        loadJson(PATHS.members),
+        loadJson(PATHS.form)
+      ]).then(function (parts) {
+        var form = parts[2];
+        return {
+          hobbies: parts[0],
+          members: parts[1],
+          minSemesterScore:
+            form.secondary && form.secondary.minSemesterScore != null
+              ? form.secondary.minSemesterScore
+              : 4
+        };
+      });
+    },
     hobbyMap: hobbyMap,
     getHobbiesByIds: getHobbiesByIds,
     buildHobbyDisplay: buildHobbyDisplay,
     getMembersWithHobbies: getMembersWithHobbies,
+    buildTeamHobbyRecommenders: buildTeamHobbyRecommenders,
+    sortHobbiesForCatalog: sortHobbiesForCatalog,
     pickSecondaryHobbies: pickSecondaryHobbies
   };

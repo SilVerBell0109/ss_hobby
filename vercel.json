@@ -5,9 +5,11 @@
     { "source": "/team.html", "destination": "/pages/team/team.html" },
     { "source": "/game.html", "destination": "/pages/game/game.html" },
     { "source": "/form.html", "destination": "/pages/form/form.html" },
+    { "source": "/hobbies.html", "destination": "/pages/hobbies/hobbies.html" },
     { "source": "/main/main.html", "destination": "/pages/main/main.html" },
     { "source": "/team/team.html", "destination": "/pages/team/team.html" },
     { "source": "/game/game.html", "destination": "/pages/game/game.html" },
-    { "source": "/form/form.html", "destination": "/pages/form/form.html" }
+    { "source": "/form/form.html", "destination": "/pages/form/form.html" },
+    { "source": "/hobbies/hobbies.html", "destination": "/pages/hobbies/hobbies.html" }
   ]
 }
