@@ -331,7 +331,7 @@ button.preview-card {
   background: var(--border);
   border-radius: 99px;
 }
-.member-detail { font-size: 0.85rem; margin-bottom: 0.4rem; }
+.member-detail { font-size: 0.85rem; margin-bottom: 0.4rem; white-space: pre-line; }
 .member-detail:last-child { margin-bottom: 0; }
 .member-detail .label { color: var(--primary); font-weight: 700; }
 .member-hobby {
