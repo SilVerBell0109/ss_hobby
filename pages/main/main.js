@@ -1,15 +1,15 @@
-(function () {
-  var scrollBtn = document.getElementById("scroll-to-concept");
-  var conceptSection = document.getElementById("section-concept");
-  if (scrollBtn && conceptSection) {
-    scrollBtn.addEventListener("click", function () {
-      conceptSection.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-  }
+import { SiteData } from "/shared/data/data.js";
 
-  var grid = document.getElementById("preview-grid");
-  if (!grid) return;
+var scrollBtn = document.getElementById("scroll-to-concept");
+var conceptSection = document.getElementById("section-concept");
+if (scrollBtn && conceptSection) {
+  scrollBtn.addEventListener("click", function () {
+    conceptSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
 
+var grid = document.getElementById("preview-grid");
+if (grid) {
   var modal = document.getElementById("hobby-modal");
   var btnClose = document.getElementById("modal-close");
 
@@ -96,4 +96,4 @@
       grid.innerHTML =
         '<p style="text-align:center;color:var(--text-light);">미리보기를 불러오지 못했습니다.</p>';
     });
-})();
+}

@@ -1,9 +1,8 @@
-(function () {
-  var grid = document.getElementById("team-grid");
-  if (!grid) return;
+import { SiteData } from "/shared/data/data.js";
 
-  var modal = document.getElementById("hobby-modal");
-  var btnClose = document.getElementById("modal-close");
+var grid = document.getElementById("team-grid");
+if (grid) {
+  var modal = document.getElementById("hobby-modal");  var btnClose = document.getElementById("modal-close");
 
   SiteData.fetchContent()
     .then(function (data) {
@@ -111,4 +110,4 @@
       grid.innerHTML =
         '<p style="text-align:center;color:var(--text-light);">팀원 정보를 불러오지 못했습니다.</p>';
     });
-})();
+}

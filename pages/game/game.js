@@ -1,5 +1,6 @@
-(function () {
-  SiteData.fetchGame()
+import { SiteData } from "/shared/data/data.js";
+
+SiteData.fetchGame()
     .then(function (cfg) {
       var rounds = cfg.rounds.slice();
       var roundCount = cfg.roundCount || 10;
@@ -215,4 +216,3 @@
       console.error(err);
       alert("게임 데이터를 불러오지 못했습니다. 잠시 후 다시 시도해주세요.");
     });
-})();

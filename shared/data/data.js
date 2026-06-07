@@ -1,6 +1,5 @@
-(function () {
-  // 경로별로 한 번 불러온 JSON을 메모리에 보관 (새로고침 시 초기화)
-  var cache = {};
+// 경로별로 한 번 불러온 JSON을 메모리에 보관 (새로고침 시 초기화)
+var cache = {};
 
   var PATHS = {
     hobbies: "/shared/data/hobbies.json",
@@ -197,7 +196,7 @@
     return picked;
   }
 
-  window.SiteData = {
+export var SiteData = {
     // 메인·팀: 취미 + 팀원
     fetchContent: function () {
       return Promise.all([
@@ -234,4 +233,3 @@
     getMembersWithHobbies: getMembersWithHobbies,
     pickSecondaryHobbies: pickSecondaryHobbies
   };
-})();
