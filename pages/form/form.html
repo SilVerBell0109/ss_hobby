@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>추천 | 폼</title>
   <link rel="stylesheet" href="/assets/style.css">
 </head>
+
 <body data-page="form">
 
   <div id="site-nav"></div>
@@ -20,7 +22,7 @@
 
       <div class="form-progress-wrap">
         <div class="form-progress-bar">
-            <div class="form-progress-fill" id="progress-fill"></div>
+          <div class="form-progress-fill" id="progress-fill"></div>
         </div>
         <span class="form-progress-label" id="progress-label">1 / 5 완료</span>
       </div>
@@ -40,7 +42,7 @@
             <span>매우 지침</span>
           </div>
         </div>
-        
+
         <div class="question-card form-group">
           <div class="question-num">Q2 · 시간</div>
           <label class="form-label">과제와 팀플을 피해 확보 가능한 시간은?</label>
@@ -57,7 +59,7 @@
           <div class="question-num">Q3 · 기분</div>
           <label class="form-label">지금 당신의 상태를 가장 잘 설명하는 것은?</label>
           <div class="chip-group" id="mood-chips">
-            <button type="button" class="chip-btn" data-name="mood" data-value="활기참">⚡ 아직 살아있음</button>
+            <button type="button" class="chip-btn" data-name="mood" data-value="활기참">⚡ 팔팔함</button>
             <button type="button" class="chip-btn" data-name="mood" data-value="평온함">😌 평화로움</button>
             <button type="button" class="chip-btn" data-name="mood" data-value="지침">😓 방전 직전</button>
             <button type="button" class="chip-btn" data-name="mood" data-value="우울함">🌧 종강이 필요함</button>
@@ -76,7 +78,7 @@
           <input type="hidden" name="place" id="place-hidden">
         </div>
 
-       <div class="question-card form-group">
+        <div class="question-card form-group">
           <div class="question-num">Q5 · 관계</div>
           <label class="form-label">에너지 충전 방식은?</label>
           <div class="chip-group" id="social-chips">
@@ -138,4 +140,5 @@
   <script src="/shared/layout.js"></script>
   <script type="module" src="/pages/form/form.js"></script>
 </body>
+
 </html>
