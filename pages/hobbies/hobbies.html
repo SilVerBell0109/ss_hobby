@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>학기 중 취미 추천 | 취미도감</title>
+  <title>취미도감</title>
   <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body data-page="hobbies">
@@ -12,16 +12,23 @@
 
   <section class="hero hero--sub">
     <h1>멘탈 회복 스킬북 🛠️</h1>
-    <p>기분이 바닥일 때 꺼내보는 취미 모음집</p>
+    <p>과제, 시험, 팀플에 지친 대학생을 위한 응급처치 키트</p>
   </section>
 
   <div class="container">
 
     <div class="hobbies-toolbar">
+      <div class="hobbies-filter-mobile">
+        <select id="mobile-filter">
+          <option value="all">전체</option>
+          <option value="semester">학기 추천</option>
+          <option value="team">생존자 추천</option>
+        </select>
+      </div>
       <div class="chip-group hobbies-filter" id="hobbies-filter">
         <button type="button" class="chip-btn selected" data-filter="all">전체</button>
-        <button type="button" class="chip-btn" data-filter="semester">종강 추천</button>
-        <button type="button" class="chip-btn" data-filter="team">검증 완료</button>
+        <button type="button" class="chip-btn" data-filter="semester">학기 추천</button>
+        <button type="button" class="chip-btn" data-filter="team">생존자 추천</button>
       </div>
       <div class="hobbies-toolbar-meta">
         <p class="hobbies-legend">
