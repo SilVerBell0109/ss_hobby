@@ -11,6 +11,7 @@ if (!grid) {
   var filterEl = document.getElementById("hobbies-filter");
   var countEl = document.getElementById("hobbies-count");
   var emptyEl = document.getElementById("hobbies-empty");
+  var mobileFilter = document.getElementById("mobile-filter");
   var modal = document.getElementById("hobby-modal");
   var modalMeta = document.getElementById("modal-hobby-meta");
   var btnClose = document.getElementById("modal-close");
@@ -118,6 +119,23 @@ if (!grid) {
       renderGrid();
     });
   }
+  if (mobileFilter) {
+  mobileFilter.addEventListener("change", function () {
+
+    activeFilter = this.value;
+
+    if (filterEl) {
+      filterEl.querySelectorAll(".chip-btn").forEach(function (chip) {
+        chip.classList.toggle(
+          "selected",
+          chip.dataset.filter === activeFilter
+        );
+      });
+    }
+
+    renderGrid();
+  });
+}
 
   SiteData.fetchCatalog()
     .then(function (data) {
