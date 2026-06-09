@@ -348,6 +348,7 @@ body[data-page="hobbies"] .container {
   margin-bottom: 1.25rem;
 }
 
+
 @media (max-width: 1023px) {
   .preview-grid.preview-grid--hobbies {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -926,11 +927,69 @@ body[data-page="form"] .result-box {
   margin-top: 0.3rem;
 }
 
-/*칩 버튼*/
-.chip-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
+/* ===========================
+   취미도감 모바일 셀렉트
+=========================== */
+
+.hobbies-filter-mobile{
+  display:none;
+}
+
+@media (max-width:768px){
+
+  /* 기존 버튼 필터 숨김 */
+  .hobbies-filter{
+    display:none !important;
+  }
+
+  /* 셀렉트 영역 */
+  .hobbies-filter-mobile{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    margin-bottom:1rem;
+    position:relative;
+  }
+
+  /* 셀렉트 꾸미기 */
+.hobbies-filter-mobile select{
+
+  width:140px;
+  height:42px;
+
+  border:none;
+  border-radius:999px;
+
+  background:#4DB190;
+
+  color:white;
+
+  font-size:0.85rem;
+  font-weight:700;
+
+  padding:0 34px 0 16px;
+
+  appearance:none;
+  -webkit-appearance:none;
+}
+
+/* 옵션 글자 */
+.hobbies-filter-mobile select option{
+  color:#1A1D2E;
+  background:#ffffff;
+}
+
+  /* 화살표 */
+  .hobbies-filter-mobile::after{
+    content:"▼";
+    position:absolute;
+    right:14px;
+
+    color:#fff;
+    font-size:11px;
+
+    pointer-events:none;
+  }
 }
 .chip-btn {
   padding: 0.5rem 1.1rem;
