@@ -776,17 +776,41 @@ button.preview-card {
   transition: background 0.15s, border-color 0.15s;
 }
 .choice-btn:hover:not(:disabled) { background: var(--surface); border-color: var(--primary); }
-.choice-btn.correct { background: #E8F0F8; border-color: var(--primary); color: var(--primary); font-weight: 700; }
+.choice-btn.correct {
+  background: #E8F0F8;
+  border-color: var(--primary);
+  color: var(--primary);
+  font-weight: 700;
+  animation: pulse 0.6s ease;
+}
 .choice-btn.wrong { background: #FDE8E8; border-color: #C05050; color: #5A1A1A; }
 .feedback.correct { background: #E8F0F8; color: var(--primary); font-weight: 700; }
 .feedback.wrong { background: #FDE8E8; color: #C05050; }
 
-.game-result-box {
-  background: var(--card);
-  border: 1px solid var(--border);
+/* 게임 규칙 박스 */
+.game-rule-box {
+  background: #f8fffc;
+  border: 2px solid #4DB190;
   border-radius: 16px;
-  padding: 3rem 2rem;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.game-rule-box h3 {
+  margin-bottom: 1rem;
+  color: #4DB190;
   text-align: center;
+}
+
+.game-rule-box ul {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+}
+
+.game-rule-box li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
 }
 .result-grade-label { color: var(--text-light); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 0.8rem; }
 .result-score-text { color: var(--text-light); margin-top: 1rem; font-size: 1.1rem; }
