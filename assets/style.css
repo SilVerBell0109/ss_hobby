@@ -787,7 +787,80 @@ button.preview-card {
 .choice-btn.wrong { background: #FDE8E8; border-color: #C05050; color: #5A1A1A; }
 .feedback.correct { background: #E8F0F8; color: var(--primary); font-weight: 700; }
 .feedback.wrong { background: #FDE8E8; color: #C05050; }
+/* =========================
+   게임 결과 화면
+========================= */
 
+.game-result-box{
+  max-width: 650px;
+  margin: 0 auto;
+
+  background: #fff;
+  border-radius: 24px;
+
+  padding: 3rem 2rem;
+
+  text-align: center;
+
+  border: 1px solid rgba(77,177,144,0.15);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.08);
+}
+
+.result-grade-label{
+  display:inline-block;
+
+  padding:0.6rem 1.2rem;
+
+  background:rgba(77,177,144,0.12);
+
+  color:#4DB190;
+
+  border-radius:999px;
+
+  font-size:0.9rem;
+  font-weight:700;
+
+  margin-bottom:1rem;
+}
+
+#grade{
+  font-size:2.3rem;
+  font-weight:800;
+
+  color:#1A1D2E;
+
+  margin-bottom:1rem;
+}
+
+#grade small{
+  display:block;
+
+  margin-top:0.8rem;
+
+  font-size:1rem;
+  font-weight:500;
+
+  color:#666;
+
+  line-height:1.7;
+}
+
+.result-score-text{
+  font-size:1.2rem;
+  margin:1.5rem 0 2rem;
+}
+
+.result-score-text strong{
+  color:#4DB190;
+  font-size:1.6rem;
+  font-weight:800;
+}
+
+.game-result-box .btn{
+  min-width:260px;
+}
 /* 게임 규칙 박스 */
 .game-rule-box {
   background: #f8fffc;
