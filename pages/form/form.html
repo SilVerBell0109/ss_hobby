@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>학기 중 취미 추천 | 폼</title>
+  <title>추천 | 폼</title>
   <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body data-page="form">
@@ -14,8 +14,8 @@
     <div class="container">
 
       <section style="padding: 3rem 0 1rem;">
-        <h1 class="section-title" style="font-size: 2.5rem;">너에게 맞는 학기 중 취미 찾기</h1>
-        <p class="section-subtitle">설문 후 팀원 추천 취미와 맞춤 취미를 함께 받아보세요</p>
+        <h1 class="section-title" style="font-size: 2.5rem;">🎯 취미 처방전 받기</h1>
+        <p class="section-subtitle">지금 필요한 건 과제가 아니라 취미일지도 모릅니다</p>
       </section>
 
       <div class="form-progress-wrap">
@@ -28,9 +28,9 @@
       <form id="hobby-form" class="form-container">
 
         <div class="question-card form-group">
-          <div class="question-num">Q1 · 컨디션</div>
+          <div class="question-num">Q1 · 생존력 체크</div>
           <label class="form-label" for="stress">
-            지금 얼마나 지쳐있는 상태인가요?
+            현재 정신력은 몇 % 남아있나요?
             <strong id="stress-val" class="range-value">5</strong>
           </label>
           <p class="stress-desc" id="stress-desc">보통 수준의 피로도</p>
@@ -43,7 +43,7 @@
         
         <div class="question-card form-group">
           <div class="question-num">Q2 · 시간</div>
-          <label class="form-label">하루에 취미에 쓸 수 있는 시간은 어느정도 되나요?</label>
+          <label class="form-label">과제와 팀플을 피해 확보 가능한 시간은?</label>
           <div class="chip-group" id="time-chips">
             <button type="button" class="chip-btn" data-name="time" data-value="10분">⏱ 10분</button>
             <button type="button" class="chip-btn" data-name="time" data-value="30분">☕ 30분</button>
@@ -55,61 +55,61 @@
 
         <div class="question-card form-group">
           <div class="question-num">Q3 · 기분</div>
-          <label class="form-label">지금 기분은 어떤가요?</label>
+          <label class="form-label">지금 당신의 상태를 가장 잘 설명하는 것은?</label>
           <div class="chip-group" id="mood-chips">
-            <button type="button" class="chip-btn" data-name="mood" data-value="활기참">⚡ 활기참</button>
-            <button type="button" class="chip-btn" data-name="mood" data-value="평온함">😌 평온함</button>
-            <button type="button" class="chip-btn" data-name="mood" data-value="지침">😓 지침</button>
-            <button type="button" class="chip-btn" data-name="mood" data-value="우울함">🌧 우울함</button>
+            <button type="button" class="chip-btn" data-name="mood" data-value="아직 살아있음">⚡ 아직 살아있음</button>
+            <button type="button" class="chip-btn" data-name="mood" data-value="평화로움">😌 평화로움</button>
+            <button type="button" class="chip-btn" data-name="mood" data-value="방전 직전">😓 방전 직전</button>
+            <button type="button" class="chip-btn" data-name="mood" data-value="종강이 필요함">🌧 종강이 필요함</button>
           </div>
           <input type="hidden" name="mood" id="mood-hidden">
         </div>
 
         <div class="question-card form-group">
           <div class="question-num">Q4 · 공간</div>
-          <label class="form-label">실내 vs 실외 어디가 좋아요?</label>
+          <label class="form-label">오늘 집 밖으로 나갈 의향이 있나요?</label>
           <div class="chip-group" id="place-chips">
-            <button type="button" class="chip-btn" data-name="place" data-value="실내">🏠 실내</button>
-            <button type="button" class="chip-btn" data-name="place" data-value="실외">🌿 실외</button>
-            <button type="button" class="chip-btn" data-name="place" data-value="상관없음">✨ 상관 없음</button>
+            <button type="button" class="chip-btn" data-name="place" data-value="절대 안 나감">🏠 절대 안 나감</button>
+            <button type="button" class="chip-btn" data-name="place" data-value="나갈 수 있음">🌿 나갈 수 있음</button>
+            <button type="button" class="chip-btn" data-name="place" data-value="아무데나 가능">✨ 아무데나 가능</button>
           </div>
           <input type="hidden" name="place" id="place-hidden">
         </div>
 
        <div class="question-card form-group">
           <div class="question-num">Q5 · 관계</div>
-          <label class="form-label">혼자 vs 같이 뭐가 더 좋아요?</label>
+          <label class="form-label">에너지 충전 방식은?</label>
           <div class="chip-group" id="social-chips">
-            <button type="button" class="chip-btn" data-name="social" data-value="혼자">🎧 혼자</button>
-            <button type="button" class="chip-btn" data-name="social" data-value="같이">👥 같이</button>
-            <button type="button" class="chip-btn" data-name="social" data-value="둘다">🤝 둘 다</button>
+            <button type="button" class="chip-btn" data-name="social" data-value="혼자가 최고">🎧 혼자가 최고</button>
+            <button type="button" class="chip-btn" data-name="social" data-value="사람 만나야 충전됨">👥 사람 만나야 충전됨</button>
+            <button type="button" class="chip-btn" data-name="social" data-value="상황 따라 다름">🤝 상황 따라 다름</button>
           </div>
           <input type="hidden" name="social" id="social-hidden">
         </div>
 
         <div class="form-actions">
-          <button type="submit" class="btn btn-accent">취미 추천 받기 →</button>
+          <button type="submit" class="btn btn-accent">나 살릴 취미 찾기→</button>
         </div>
 
       </form>
 
       <div id="result-box" class="result-box result-box--team" style="display:none;">
-        <p class="result-section-label">팀원 추천</p>
+        <p class="result-section-label">🩺 진단 결과</p>
         <div id="result-emoji" class="result-emoji"></div>
-        <p class="result-label">추천 취미</p>
+        <p class="result-label">오늘의 처방 취미</p>
         <h2 class="result-hobby" id="result-hobby"></h2>
         <p class="result-from" id="result-from"></p>
         <div class="result-tips">
-          <strong>시작 가이드</strong>
+          <strong>🚀 입문 방법</strong>
           <p id="result-guide" style="margin-top:0.5rem;"></p>
-          <strong style="display:block; margin-top:1rem;">학기 중 꾸준히 하는 팁</strong>
+          <strong style="display:block; margin-top:1rem;">🔥 종강까지 유지하는 방법</strong>
           <p id="result-tip" style="margin-top:0.5rem;"></p>
         </div>
       </div>
 
       <section id="secondary-box" class="section form-secondary-section" style="display:none;">
-        <h2 class="section-title" id="secondary-title">이런 취미는 어때요?</h2>
-        <p class="section-subtitle" id="secondary-desc">카드를 눌러 시작 방법과 팁을 확인해보세요</p>
+        <h2 class="section-title" id="secondary-title">👀 이것도 꽤 괜찮은데요?</h2>
+        <p class="section-subtitle" id="secondary-desc">멘탈 회복 후보군을 추가로 발견했습니다</p>
         <div id="secondary-list" class="preview-grid preview-grid--form"></div>
       </section>
 
