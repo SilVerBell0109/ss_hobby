@@ -32,13 +32,14 @@
     "name": "장범조",
     "studentId": "20213073",
     "major": "소프트웨어전공",
-    "role": "페이지 구현",
-    "tasks": "페이지 구현",
+    "role": "페이지 구현 및 기능 개선",
+    "tasks": "게임 페이지 구현, 이모티콘 퀴즈 게임 로직 개발, UI 수정, 글꼴 및 레이아웃 개선, 반응형 디자인 적용, 기능 테스트 및 버그 수정, 팀원 작업물 통합 및 개선",
     "hobbyIds": ["exercise"],
-    "teamGuide": "땀 흘리는 운동부터 시작해보세요. 정직한 노력은 배신하지 않습니다.",
-    "teamTip": "과제로 지칠 땐 에너지 넘치는 축구 경기 한 판이 뇌를 깨워줍니다.",
-    "photo": "/assets/images/beomjo.jpg",
-    "previewAvatar": "💪"
+    "teamGuide": "저는 학업으로 스트레스를 받을 때 오토바이 라이딩, 축구, 헬스를 즐깁니다. 오토바이 라이딩은 답답한 마음을 환기시켜 주고, 축구는 친구들과 함께 뛰며 즐거움과 활력을 얻을 수 있습니다. 헬스는 꾸준한 운동 습관을 만들고 체력을 관리하는 데 큰 도움이 됩니다.",
+    "teamTip": "기분 전환이 필요할 때는 오토바이를 타고 가까운 곳으로 드라이브를 가보세요. 친구들과 축구 한 경기를 하면 스트레스 해소에 정말 좋고, 헬스는 무리하지 말고 꾸준히 하는 것이 가장 중요합니다. 몸을 움직이는 취미는 학업과 일상에 새로운 에너지를 불어넣어 줍니다.",
+    "photo": "/assets/images/beomjo/hobby2.jpg",
+    "hobbyPhotos": ["/assets/images/beomjo/hobby1.jpg", "/assets/images/beomjo/hobby3.jpg"],
+    "previewAvatar": "🏍️"
   },
   {
     "id": "member-hojin",
