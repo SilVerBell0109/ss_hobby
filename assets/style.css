@@ -977,7 +977,9 @@ body[data-page="form"] .result-box {
 
 /* 반응형 */
 @media (max-width: 768px) {
-  .nav-menu { gap: 1rem; }
+  .nav-logo { font-size: 1.15rem; }
+  .nav-menu { gap: 0.8rem; }
+  .nav-menu a { font-size: 0.82rem; }
   .nav-container { padding: 0 1rem; }
   .container { padding: 1rem 1rem; }
   .hero { padding: 4.5rem 1rem; }
