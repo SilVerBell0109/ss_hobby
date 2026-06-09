@@ -80,11 +80,19 @@ SiteData.fetchGame()
             if (!answered) {
               answered = true;
               streak = 0;
-              feedbackEl.textContent = "⏰ 시간 초과!";
+
+              var correct = rounds[currentRound].answer;
+
+              feedbackEl.textContent =
+                '⏰ 시간 초과! 정답은 "' + correct + '"';
               feedbackEl.className = "feedback wrong";
 
               document.querySelectorAll(".choice-btn").forEach(function (b) {
                 b.disabled = true;
+
+                if (b.textContent === correct) {
+                  b.classList.add("correct");
+                }
               });
 
               nextBtn.style.display = "inline-block";
