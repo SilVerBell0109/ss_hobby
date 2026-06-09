@@ -18,27 +18,31 @@
   <div class="container">
 
     <div class="hobbies-toolbar">
-      <div class="hobbies-filter-mobile">
-        <select id="mobile-filter">
-          <option value="all">전체</option>
-          <option value="semester">학기 추천</option>
-          <option value="team">생존자 추천</option>
-        </select>
-      </div>
-      <div class="chip-group hobbies-filter" id="hobbies-filter">
-        <button type="button" class="chip-btn selected" data-filter="all">전체</button>
-        <button type="button" class="chip-btn" data-filter="semester">학기 추천</button>
-        <button type="button" class="chip-btn" data-filter="team">생존자 추천</button>
-      </div>
-      <div class="hobbies-toolbar-meta">
-        <p class="hobbies-legend">
-          <span class="hobby-badge hobby-badge--semester">★</span>
-          <span>학기 추천 점수</span>
-          <span class="hobbies-legend-sep" aria-hidden="true">·</span>
-          <span class="hobby-badge hobby-badge--team">팀</span>
-          <span>팀원이 소개한 취미</span>
-        </p>
-        <p class="hobbies-count" id="hobbies-count" aria-live="polite"></p>
+      <div class="hobbies-toolbar-row">
+        <div class="hobbies-toolbar-actions">
+          <div class="hobbies-filter-mobile">
+            <select id="mobile-filter">
+              <option value="all">전체</option>
+              <option value="semester">학기 추천</option>
+              <option value="team">생존자 추천</option>
+            </select>
+          </div>
+          <div class="chip-group hobbies-filter" id="hobbies-filter">
+            <button type="button" class="chip-btn selected" data-filter="all">전체</button>
+            <button type="button" class="chip-btn" data-filter="semester">학기 추천</button>
+            <button type="button" class="chip-btn" data-filter="team">생존자 추천</button>
+          </div>
+        </div>
+        <div class="hobbies-toolbar-meta">
+          <p class="hobbies-legend">
+            <span class="hobby-badge hobby-badge--semester">★</span>
+            <span>학기 추천 점수</span>
+            <span class="hobbies-legend-sep" aria-hidden="true">·</span>
+            <span class="hobby-badge hobby-badge--team">팀</span>
+            <span>팀원이 소개한 취미</span>
+          </p>
+          <p class="hobbies-count" id="hobbies-count" aria-live="polite"></p>
+        </div>
       </div>
     </div>
 

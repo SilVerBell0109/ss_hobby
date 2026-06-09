@@ -20,6 +20,8 @@ if (!grid) {
   var teamByHobbyId = {};
   var minSemesterScore = 4;
   var activeFilter = "all";
+  var fadeTimer = null;
+  var FADE_MS = 220;
 
   function isSemesterRecommended(hobby) {
     return hobby.semester && hobby.semester.score >= minSemesterScore;
@@ -67,8 +69,26 @@ if (!grid) {
     if (e.key === "Escape") closeModal();
   });
 
-  function renderGrid() {
-    var list = getFilteredHobbies();
+  function prefersReducedMotion() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  function syncFilterUI() {
+    if (mobileFilter) {
+      mobileFilter.value = activeFilter;
+    }
+    if (filterEl) {
+      filterEl.querySelectorAll(".chip-btn").forEach(function (chip) {
+        chip.classList.toggle(
+          "selected",
+          chip.getAttribute("data-filter") === activeFilter
+        );
+      });
+    }
+  }
+
+  function paintGrid(list, options) {
+    options = options || {};
     grid.innerHTML = "";
 
     if (countEl) {
@@ -86,6 +106,9 @@ if (!grid) {
       var btn = document.createElement("button");
       btn.type = "button";
       btn.className = "preview-card preview-card--hobby";
+      if (options.cardEnter) {
+        btn.classList.add("preview-card--enter");
+      }
 
       var badges = createHobbyBadgesEl(hobby, teamByHobbyId, minSemesterScore);
       if (badges) btn.appendChild(badges);
@@ -107,42 +130,58 @@ if (!grid) {
     });
   }
 
+  function renderGrid(animate) {
+    syncFilterUI();
+    var list = getFilteredHobbies();
+    var paintOptions = animate && !prefersReducedMotion()
+      ? { cardEnter: true }
+      : {};
+
+    if (fadeTimer) {
+      clearTimeout(fadeTimer);
+      fadeTimer = null;
+    }
+
+    if (!animate || prefersReducedMotion()) {
+      grid.classList.remove("is-fading");
+      paintGrid(list, paintOptions);
+      return;
+    }
+
+    grid.classList.add("is-fading");
+    fadeTimer = setTimeout(function () {
+      paintGrid(list, paintOptions);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          grid.classList.remove("is-fading");
+        });
+      });
+      fadeTimer = null;
+    }, FADE_MS);
+  }
+
   if (filterEl) {
     filterEl.addEventListener("click", function (e) {
       var btn = e.target.closest("[data-filter]");
       if (!btn || !filterEl.contains(btn)) return;
 
       activeFilter = btn.getAttribute("data-filter") || "all";
-      filterEl.querySelectorAll(".chip-btn").forEach(function (chip) {
-        chip.classList.toggle("selected", chip === btn);
-      });
-      renderGrid();
+      renderGrid(true);
     });
   }
   if (mobileFilter) {
-  mobileFilter.addEventListener("change", function () {
-
-    activeFilter = this.value;
-
-    if (filterEl) {
-      filterEl.querySelectorAll(".chip-btn").forEach(function (chip) {
-        chip.classList.toggle(
-          "selected",
-          chip.dataset.filter === activeFilter
-        );
-      });
-    }
-
-    renderGrid();
-  });
-}
+    mobileFilter.addEventListener("change", function () {
+      activeFilter = this.value;
+      renderGrid(true);
+    });
+  }
 
   SiteData.fetchCatalog()
     .then(function (data) {
       minSemesterScore = data.minSemesterScore;
       teamByHobbyId = SiteData.buildTeamHobbyRecommenders(data.members);
       allHobbies = SiteData.sortHobbiesForCatalog(data.hobbies);
-      renderGrid();
+      renderGrid(false);
     })
     .catch(function () {
       grid.innerHTML =

@@ -242,24 +242,39 @@ body[data-page="hobbies"] .container {
   padding-top: 1.5rem;
 }
 
+.hobbies-toolbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  flex-wrap: wrap;
+}
+
+.hobbies-toolbar-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .hobbies-filter {
-  justify-content: center;
-  margin-bottom: 0.75rem;
+  justify-content: flex-start;
+  margin-bottom: 0;
 }
 
 .hobbies-toolbar-meta {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  justify-content: flex-end;
+  gap: 0.75rem 1rem;
   flex-wrap: wrap;
+  margin-left: auto;
 }
 
 .hobbies-legend {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
   gap: 0.35rem 0.5rem;
   font-size: 0.85rem;
   color: var(--text-light);
@@ -274,7 +289,6 @@ body[data-page="hobbies"] .container {
   font-size: 0.85rem;
   color: var(--text-light);
   margin: 0;
-  margin-left: auto;
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -288,6 +302,36 @@ body[data-page="hobbies"] .container {
 .preview-grid.preview-grid--hobbies {
   width: 100%;
   grid-template-columns: repeat(5, minmax(0, 1fr));
+  transition: opacity 0.22s ease;
+}
+
+.preview-grid.preview-grid--hobbies.is-fading {
+  opacity: 0;
+}
+
+.preview-grid--hobbies .preview-card--enter {
+  animation: hobby-card-enter 0.45s ease-out backwards;
+}
+
+@keyframes hobby-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preview-grid.preview-grid--hobbies {
+    transition: none;
+  }
+
+  .preview-grid--hobbies .preview-card--enter {
+    animation: none;
+  }
 }
 
 .preview-grid--hobbies .preview-card--hobby {
@@ -1010,6 +1054,17 @@ body[data-page="form"] .result-box {
 
 @media (max-width:768px){
 
+  .hobbies-toolbar-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+  }
+
+  .hobbies-toolbar-actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+
   /* 기존 버튼 필터 숨김 */
   .hobbies-filter{
     display:none !important;
@@ -1017,30 +1072,41 @@ body[data-page="form"] .result-box {
 
   /* 셀렉트 영역 */
   .hobbies-filter-mobile{
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
-    margin-bottom:1rem;
+    display:block;
+    width:100%;
+    margin-bottom:0;
     position:relative;
+  }
+
+  .hobbies-toolbar-meta {
+    justify-content: space-between;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .hobbies-legend {
+    justify-content: flex-start;
   }
 
   /* 셀렉트 꾸미기 */
 .hobbies-filter-mobile select{
 
-  width:140px;
+  width:100%;
   height:42px;
+  box-sizing:border-box;
 
-  border:none;
+  border:1.5px solid var(--primary);
   border-radius:999px;
 
-  background:#4DB190;
+  background:var(--secondary);
 
-  color:white;
+  color:var(--primary);
 
   font-size:0.85rem;
-  font-weight:700;
+  font-weight:500;
 
-  padding:0 34px 0 16px;
+  padding:0 2.25rem;
+  text-align:center;
 
   appearance:none;
   -webkit-appearance:none;
@@ -1048,17 +1114,19 @@ body[data-page="form"] .result-box {
 
 /* 옵션 글자 */
 .hobbies-filter-mobile select option{
-  color:#1A1D2E;
-  background:#ffffff;
+  color:var(--text);
+  background:var(--card);
 }
 
   /* 화살표 */
   .hobbies-filter-mobile::after{
     content:"▼";
     position:absolute;
-    right:14px;
+    right:1rem;
+    top:50%;
+    transform:translateY(-50%);
 
-    color:#fff;
+    color:var(--primary);
     font-size:11px;
 
     pointer-events:none;
