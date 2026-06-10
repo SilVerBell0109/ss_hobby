@@ -25,12 +25,13 @@
 * 팀원 정보·역할·수행 업무 소개
 * 각 팀원이 추천하는 취미 카드 (클릭 시 가이드·팁·사진 모달)
 
-### 3. 취미도감
+### 3. 취미도감 (멘탈 회복 스킬북)
 
 * `hobbies.json`에 등록된 **43개 취미** 전체 탐색
-* **전체 / 학기 추천 / 팀 추천** 필터
-* 카드 뱃지: **★학기 추천 점수**, **팀** (팀원 소개 취미)
-* 카드 클릭 시 시작 가이드·학기 중 꿀팁 모달
+* **전체 / 학기 추천 / 생존자 추천** 필터 (데스크톱 칩 · 모바일 셀렉트)
+* 필터 변경 시 그리드 페이드·카드 등장 애니메이션
+* 카드 뱃지: **★학기 추천 점수**, **팀** (팀원이 소개한 취미)
+* 카드 클릭 시 시작 가이드·실사용 후기 모달
 * 데스크톱 5열 그리드 (태블릿 3열 · 모바일 2열)
 
 ### 4. 이모티콘 취미 퀴즈 게임
@@ -44,7 +45,8 @@
 * 5문항: 스트레스 정도, 가능 시간, 기분, 실내/실외, 혼자/함께
 * **1차 추천**: 가중치 기반 팀원 취미 묶음 매칭
 * **2차 추천**: 태그·학기 점수 기반 추가 취미 3개 (`이런 취미는 어때요?`)
-* 결과 카드 클릭 시 가이드·팁·학기 점수·팀 추천 여부 모달
+* 2차 추천·취미도감 공통 `createHobbyPreviewCard` 카드 UI
+* 결과·2차 추천 카드 클릭 시 가이드·팁·학기 점수·팀 추천 여부 모달
 
 ---
 
@@ -76,7 +78,7 @@ ss_hobby/
 │   ├── hobbies/        # 취미도감
 │   │   ├── hobbies.html
 │   │   ├── hobbies.js
-│   │   └── hobby-ui.js # 카드 뱃지·모달 메타 (폼 2차 추천과 공유)
+│   │   └── hobby-ui.js # 뱃지·프리뷰 카드·모달 UI (폼·메인·팀과 공유)
 │   ├── game/
 │   │   ├── game.html
 │   │   └── game.js
@@ -89,6 +91,7 @@ ss_hobby/
 │   └── images/         # 팀원·취미 사진
 ├── shared/             # 페이지 공통
 │   ├── layout.js       # 공통 nav·footer
+│   ├── modal.js        # bindModal — 모달 열기/닫기 공통
 │   └── data/
 │       ├── hobbies.json   # 취미 마스터 (43개, tags·semester·guide·tip)
 │       ├── members.json   # 팀원 (hobbyIds, teamGuide, teamTip)
@@ -101,6 +104,15 @@ ss_hobby/
 └── README.md
 ```
 
+### 공통 모듈
+
+| 파일 | 역할 |
+|------|------|
+| `layout.js` | 공통 nav·footer (`data-page` 기준 활성 메뉴) |
+| `modal.js` | `bindModal` — 닫기 버튼·배경 클릭·ESC·스크롤 잠금 |
+| `hobby-ui.js` | `createHobbyPreviewCard`, `createHobbyBadgesEl`, `fillHobbyDetailModal`, `fillMemberHobbyModal` |
+| `data.js` | `fetchContent` · `fetchForm` · `fetchCatalog` · `fetchGame` 및 조합·2차 추천 스코어링 |
+
 ### 데이터 구조 요약
 
 | 파일 | 역할 |
@@ -108,7 +120,7 @@ ss_hobby/
 | `hobbies.json` | 취미 단일 엔티티 (`id`, `name`, `emoji`, `tags`, `semester.score`, `guide`, `tip`) |
 | `members.json` | 팀원 + `hobbyIds[]`로 취미 연결, 팀 소개용 `teamGuide` / `teamTip` |
 | `form.json` | 5팀 1차 추천 묶음, 설문 옵션·가중치, 2차 추천(`secondary`) 설정 |
-| `data.js` | `fetchContent` · `fetchForm` · `fetchCatalog` · `fetchGame` 및 조합 헬퍼 |
+| `game.json` | 퀴즈 라운드·정답·점수 설정 |
 
 ---
 
@@ -133,7 +145,7 @@ Vercel 배포 시 `/hobbies.html` 등 짧은 경로로도 접근 가능 (`vercel
 | 김시연 | 발표 자료 구성·제작, 폼 카드·버튼, 메인 취미 장점 카드 |
 | 유가영 | 메인·폼 페이지 구현, 설문 UI·가중치 매칭 알고리즘 |
 | 장범조 | 페이지 구현 |
-| 정호진 | UI/UX·디자인 시스템, 공통 레이아웃·컴포넌트(모달·카드)·데이터 구조, 취미도감·페이지 연동 |
+| 정호진 | UI/UX·디자인 시스템, 공통 컴포넌트(모달·카드)·데이터 구조, 취미도감·페이지 연동, 발표자료 제작 |
 | 최종은 | 기획 리드, 페르소나·사용자 여정, 최종 발표 |
 
 ---
