@@ -3,7 +3,7 @@ import {
   createHobbyBadgesEl,
   fillHobbyModalMeta
 } from "/pages/hobbies/hobby-ui.js";
-import "./form-ui.js";
+import { setStressConfig } from "./form-ui.js";
 
 var form = document.getElementById("hobby-form");
 if (!form) {
@@ -105,6 +105,8 @@ SiteData.fetchForm()
     var weights = formData.weights;
     var options = formData.options;
     var stressW = weights.stress;
+
+    setStressConfig(stressW);
 
     teamByHobbyId = formData.teamByHobbyId || {};
     minSemesterScore = formData.minSemesterScore != null ? formData.minSemesterScore : 4;
