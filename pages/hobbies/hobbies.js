@@ -165,12 +165,17 @@ if (!grid) {
       var btn = e.target.closest("[data-filter]");
       if (!btn || !filterEl.contains(btn)) return;
 
-      activeFilter = btn.getAttribute("data-filter") || "all";
+      var nextFilter = btn.getAttribute("data-filter") || "all";
+      if (nextFilter === activeFilter) return;
+
+      activeFilter = nextFilter;
       renderGrid(true);
     });
   }
   if (mobileFilter) {
     mobileFilter.addEventListener("change", function () {
+      if (this.value === activeFilter) return;
+
       activeFilter = this.value;
       renderGrid(true);
     });
