@@ -1,7 +1,7 @@
 import { SiteData } from "/shared/data/data.js";
 import { bindModal } from "/shared/modal.js";
 import {
-  createHobbyBadgesEl,
+  createHobbyPreviewCard,
   fillHobbyDetailModal
 } from "/pages/hobbies/hobby-ui.js";
 import { setStressConfig } from "./form-ui.js";
@@ -49,27 +49,14 @@ function renderSecondaryList(hobbies) {
   }
 
   hobbies.forEach(function (h) {
-    var btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "preview-card preview-card--hobby secondary-preview-card";
-
-    var badges = createHobbyBadgesEl(h, teamByHobbyId, minSemesterScore);
-    if (badges) btn.appendChild(badges);
-
-    var avatar = document.createElement("div");
-    avatar.className = "preview-avatar";
-    avatar.textContent = h.emoji || h.cardEmoji || "🎯";
-
-    var name = document.createElement("p");
-    name.className = "name";
-    name.textContent = h.name || "";
-
-    btn.appendChild(avatar);
-    btn.appendChild(name);
-    btn.addEventListener("click", function () {
-      openSecondaryModal(h);
-    });
-    secondaryList.appendChild(btn);
+    secondaryList.appendChild(
+      createHobbyPreviewCard(h, {
+        teamByHobbyId: teamByHobbyId,
+        minSemesterScore: minSemesterScore,
+        extraClass: "secondary-preview-card",
+        onClick: openSecondaryModal
+      })
+    );
   });
 
   secondaryBox.style.display = "block";

@@ -33,6 +33,50 @@ export function createHobbyBadgesEl(hobby, teamByHobbyId, minSemesterScore) {
   return wrap;
 }
 
+/**
+ * 취미도감·폼 2차 추천 등에서 쓰는 preview-card--hobby 버튼을 만든다.
+ * @param {object} hobby
+ * @param {{ teamByHobbyId?: object, minSemesterScore?: number, extraClass?: string, enter?: boolean, onClick?: (hobby: object) => void }} [options]
+ */
+export function createHobbyPreviewCard(hobby, options) {
+  options = options || {};
+  var teamByHobbyId = options.teamByHobbyId || {};
+  var minSemesterScore =
+    options.minSemesterScore != null ? options.minSemesterScore : 4;
+
+  var btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "preview-card preview-card--hobby";
+  if (options.extraClass) {
+    options.extraClass.split(/\s+/).forEach(function (cls) {
+      if (cls) btn.classList.add(cls);
+    });
+  }
+  if (options.enter) btn.classList.add("preview-card--enter");
+
+  var badges = createHobbyBadgesEl(hobby, teamByHobbyId, minSemesterScore);
+  if (badges) btn.appendChild(badges);
+
+  var avatar = document.createElement("div");
+  avatar.className = "preview-avatar";
+  avatar.textContent = hobby.cardEmoji || hobby.emoji || "🎯";
+
+  var name = document.createElement("p");
+  name.className = "name";
+  name.textContent = hobby.name || "";
+
+  btn.appendChild(avatar);
+  btn.appendChild(name);
+
+  if (typeof options.onClick === "function") {
+    btn.addEventListener("click", function () {
+      options.onClick(hobby);
+    });
+  }
+
+  return btn;
+}
+
 export function fillHobbyModalMeta(container, hobby, teamByHobbyId, minSemesterScore) {
   if (!container) return;
 

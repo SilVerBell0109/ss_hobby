@@ -1,7 +1,7 @@
 import { SiteData } from "/shared/data/data.js";
 import { bindModal } from "/shared/modal.js";
 import {
-  createHobbyBadgesEl,
+  createHobbyPreviewCard,
   fillHobbyDetailModal
 } from "./hobby-ui.js";
 
@@ -87,30 +87,14 @@ if (!grid) {
     if (emptyEl) emptyEl.style.display = "none";
 
     list.forEach(function (hobby) {
-      var btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "preview-card preview-card--hobby";
-      if (options.cardEnter) {
-        btn.classList.add("preview-card--enter");
-      }
-
-      var badges = createHobbyBadgesEl(hobby, teamByHobbyId, minSemesterScore);
-      if (badges) btn.appendChild(badges);
-
-      var avatar = document.createElement("div");
-      avatar.className = "preview-avatar";
-      avatar.textContent = hobby.cardEmoji || hobby.emoji || "🎯";
-
-      var name = document.createElement("p");
-      name.className = "name";
-      name.textContent = hobby.name || "";
-
-      btn.appendChild(avatar);
-      btn.appendChild(name);
-      btn.addEventListener("click", function () {
-        openModal(hobby);
-      });
-      grid.appendChild(btn);
+      grid.appendChild(
+        createHobbyPreviewCard(hobby, {
+          teamByHobbyId: teamByHobbyId,
+          minSemesterScore: minSemesterScore,
+          enter: options.cardEnter,
+          onClick: openModal
+        })
+      );
     });
   }
 
