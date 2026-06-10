@@ -1,7 +1,8 @@
 import { SiteData } from "/shared/data/data.js";
+import { bindModal } from "/shared/modal.js";
 import {
   createHobbyBadgesEl,
-  fillHobbyModalMeta
+  fillHobbyDetailModal
 } from "./hobby-ui.js";
 
 var grid = document.getElementById("hobbies-grid");
@@ -12,9 +13,8 @@ if (!grid) {
   var countEl = document.getElementById("hobbies-count");
   var emptyEl = document.getElementById("hobbies-empty");
   var mobileFilter = document.getElementById("mobile-filter");
-  var modal = document.getElementById("hobby-modal");
-  var modalMeta = document.getElementById("modal-hobby-meta");
-  var btnClose = document.getElementById("modal-close");
+  var modalOverlay = document.getElementById("hobby-modal");
+  var hobbyModal = bindModal(modalOverlay);
 
   var allHobbies = [];
   var teamByHobbyId = {};
@@ -43,31 +43,15 @@ if (!grid) {
   }
 
   function openModal(hobby) {
-    document.getElementById("modal-emoji").textContent =
-      hobby.emoji || hobby.cardEmoji || "";
-    document.getElementById("modal-hobby-name").textContent = hobby.name || "";
-    fillHobbyModalMeta(modalMeta, hobby, teamByHobbyId, minSemesterScore);
-    document.getElementById("modal-guide").textContent = hobby.guide || "";
-    document.getElementById("modal-tip").textContent = hobby.tip || "";
-
-    modal.style.display = "flex";
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeModal() {
-    modal.style.display = "none";
-    document.body.style.overflow = "";
-  }
-
-  if (btnClose) btnClose.addEventListener("click", closeModal);
-  if (modal) {
-    modal.addEventListener("click", function (e) {
-      if (e.target === modal) closeModal();
+    hobbyModal.open(function () {
+      fillHobbyDetailModal(
+        modalOverlay,
+        hobby,
+        teamByHobbyId,
+        minSemesterScore
+      );
     });
   }
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeModal();
-  });
 
   function prefersReducedMotion() {
     return window.matchMedia("(prefers-reduced-motion: reduce)").matches;

@@ -1,8 +1,11 @@
 import { SiteData } from "/shared/data/data.js";
+import { bindModal } from "/shared/modal.js";
+import { fillMemberHobbyModal } from "/pages/hobbies/hobby-ui.js";
 
 var grid = document.getElementById("team-grid");
 if (grid) {
-  var modal = document.getElementById("hobby-modal");  var btnClose = document.getElementById("modal-close");
+  var modalOverlay = document.getElementById("hobby-modal");
+  var memberModal = bindModal(modalOverlay);
 
   SiteData.fetchContent()
     .then(function (data) {
@@ -67,43 +70,10 @@ if (grid) {
         grid.appendChild(card);
 
         hobbyEl.addEventListener("click", function () {
-          document.getElementById("modal-emoji").textContent = d.emoji;
-          document.getElementById("modal-hobby-name").textContent = d.name;
-          document.getElementById("modal-recommender").textContent =
-            "추천인 : " + m.name;
-          document.getElementById("modal-guide").textContent = d.guide;
-          document.getElementById("modal-tip").textContent = d.tip;
-
-          var photosEl = document.getElementById("modal-hobby-photos");
-          photosEl.innerHTML = "";
-          if (m.hobbyPhotos && m.hobbyPhotos.length) {
-            m.hobbyPhotos.forEach(function (src) {
-              var img = document.createElement("img");
-              img.src = src;
-              img.className = "modal-hobby-photo";
-              photosEl.appendChild(img);
-            });
-            photosEl.style.display = "flex";
-          } else {
-            photosEl.style.display = "none";
-          }
-
-          modal.style.display = "flex";
-          document.body.style.overflow = "hidden";
+          memberModal.open(function () {
+            fillMemberHobbyModal(modalOverlay, row);
+          });
         });
-      });
-
-      function closeModal() {
-        modal.style.display = "none";
-        document.body.style.overflow = "";
-      }
-
-      btnClose.addEventListener("click", closeModal);
-      modal.addEventListener("click", function (e) {
-        if (e.target === modal) closeModal();
-      });
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") closeModal();
       });
     })
     .catch(function () {

@@ -1,7 +1,8 @@
 import { SiteData } from "/shared/data/data.js";
+import { bindModal } from "/shared/modal.js";
 import {
   createHobbyBadgesEl,
-  fillHobbyModalMeta
+  fillHobbyDetailModal
 } from "/pages/hobbies/hobby-ui.js";
 import { setStressConfig } from "./form-ui.js";
 
@@ -20,46 +21,23 @@ var secondaryBox = document.getElementById("secondary-box");
 var secondaryTitle = document.getElementById("secondary-title");
 var secondaryList = document.getElementById("secondary-list");
 
-var secondaryModal = document.getElementById("secondary-modal");
-var secondaryModalClose = document.getElementById("secondary-modal-close");
-var secondaryModalEmoji = document.getElementById("secondary-modal-emoji");
-var secondaryModalName = document.getElementById("secondary-modal-name");
-var secondaryModalMeta = document.getElementById("secondary-modal-meta");
-var secondaryModalGuide = document.getElementById("secondary-modal-guide");
-var secondaryModalTip = document.getElementById("secondary-modal-tip");
+var secondaryModalOverlay = document.getElementById("secondary-modal");
+var secondaryHobbyModal = bindModal(secondaryModalOverlay);
 
 var OUTDOOR_HOBBY_IDS = ["travel", "neighborhood-walk"];
 var teamByHobbyId = {};
 var minSemesterScore = 4;
 
 function openSecondaryModal(hobby) {
-  if (!secondaryModal) return;
-  secondaryModalEmoji.textContent = hobby.emoji || hobby.cardEmoji || "";
-  secondaryModalName.textContent = hobby.name || "";
-  fillHobbyModalMeta(secondaryModalMeta, hobby, teamByHobbyId, minSemesterScore);
-  secondaryModalGuide.textContent = hobby.guide || "";
-  secondaryModalTip.textContent = hobby.tip || "";
-  secondaryModal.style.display = "flex";
-  document.body.style.overflow = "hidden";
-}
-
-function closeSecondaryModal() {
-  if (!secondaryModal) return;
-  secondaryModal.style.display = "none";
-  document.body.style.overflow = "";
-}
-
-if (secondaryModalClose) {
-  secondaryModalClose.addEventListener("click", closeSecondaryModal);
-}
-if (secondaryModal) {
-  secondaryModal.addEventListener("click", function (e) {
-    if (e.target === secondaryModal) closeSecondaryModal();
+  secondaryHobbyModal.open(function () {
+    fillHobbyDetailModal(
+      secondaryModalOverlay,
+      hobby,
+      teamByHobbyId,
+      minSemesterScore
+    );
   });
 }
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape") closeSecondaryModal();
-});
 
 function renderSecondaryList(hobbies) {
   if (!secondaryList || !secondaryBox) return;

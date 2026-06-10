@@ -27,7 +27,7 @@
 
 ### 3. 취미도감
 
-* `hobbies.json`에 등록된 **41개 취미** 전체 탐색
+* `hobbies.json`에 등록된 **43개 취미** 전체 탐색
 * **전체 / 학기 추천 / 팀 추천** 필터
 * 카드 뱃지: **★학기 추천 점수**, **팀** (팀원 소개 취미)
 * 카드 클릭 시 시작 가이드·학기 중 꿀팁 모달
@@ -65,33 +65,40 @@
 ## 📂 프로젝트 구조
 
 ```text
-project/
+ss_hobby/
 ├── pages/              # 화면(도메인)별
 │   ├── main/
+│   │   ├── main.html
+│   │   └── main.js
 │   ├── team/
+│   │   ├── team.html
+│   │   └── team.js
 │   ├── hobbies/        # 취미도감
 │   │   ├── hobbies.html
 │   │   ├── hobbies.js
 │   │   └── hobby-ui.js # 카드 뱃지·모달 메타 (폼 2차 추천과 공유)
 │   ├── game/
-│   └── form/
+│   │   ├── game.html
+│   │   └── game.js
+│   └── form/           # 취미 처방전
 │       ├── form.html
 │       ├── form.js
 │       └── form-ui.js  # 진행률·칩 선택 UI
 ├── assets/
 │   ├── style.css       # 공통 스타일
 │   └── images/         # 팀원·취미 사진
-├── shared/
+├── shared/             # 페이지 공통
 │   ├── layout.js       # 공통 nav·footer
 │   └── data/
-│       ├── hobbies.json   # 취미 마스터 (41개, tags·semester·guide·tip)
+│       ├── hobbies.json   # 취미 마스터 (43개, tags·semester·guide·tip)
 │       ├── members.json   # 팀원 (hobbyIds, teamGuide, teamTip)
 │       ├── form.json      # 1차 추천 묶음·가중치·2차 추천 설정
 │       ├── game.json      # 게임 라운드·설정
 │       └── data.js        # JSON fetch·조인·2차 추천 스코어링 (ES module)
 ├── docs/
 │   └── wireframe.html
-└── vercel.json
+├── vercel.json
+└── README.md
 ```
 
 ### 데이터 구조 요약
